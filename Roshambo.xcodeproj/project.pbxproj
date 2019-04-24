@@ -11,6 +11,38 @@
 		B99C440B2270DFB500431AF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C440A2270DFB500431AF5 /* ViewController.swift */; };
 		B99C44102270DFB800431AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99C440F2270DFB800431AF5 /* Assets.xcassets */; };
 		B99C44132270DFB800431AF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99C44112270DFB800431AF5 /* LaunchScreen.storyboard */; };
+		B99C442F2270E48500431AF5 /* GameBoardInteractorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44232270E48400431AF5 /* GameBoardInteractorDependencies.swift */; };
+		B99C44302270E48500431AF5 /* GameBoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44242270E48400431AF5 /* GameBoardPresenter.swift */; };
+		B99C44312270E48500431AF5 /* GameBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44252270E48400431AF5 /* GameBoardRouter.swift */; };
+		B99C44322270E48500431AF5 /* GameBoardRouterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44262270E48400431AF5 /* GameBoardRouterDependencies.swift */; };
+		B99C44332270E48500431AF5 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44272270E48400431AF5 /* GameBoardViewController.swift */; };
+		B99C44342270E48500431AF5 /* GameBoardWireframeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44282270E48400431AF5 /* GameBoardWireframeError.swift */; };
+		B99C44352270E48500431AF5 /* GameBoardPresenterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44292270E48400431AF5 /* GameBoardPresenterDependencies.swift */; };
+		B99C44362270E48500431AF5 /* GameBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C442A2270E48400431AF5 /* GameBoardInteractor.swift */; };
+		B99C44372270E48500431AF5 /* GameBoardDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C442B2270E48400431AF5 /* GameBoardDelegateProtocol.swift */; };
+		B99C44382270E48500431AF5 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C442C2270E48500431AF5 /* GameBoardView.swift */; };
+		B99C44392270E48500431AF5 /* GameBoardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C442D2270E48500431AF5 /* GameBoardProtocol.swift */; };
+		B99C443A2270E48500431AF5 /* GameBoardWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C442E2270E48500431AF5 /* GameBoardWireframe.swift */; };
+		B99C443D2270E5EB00431AF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C443C2270E5EB00431AF5 /* PlayerView.swift */; };
+		B99C443F2270E77700431AF5 /* PlayerViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C443E2270E77700431AF5 /* PlayerViewDelegateProtocol.swift */; };
+		B99C44412270E81A00431AF5 /* PlayerViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44402270E81A00431AF5 /* PlayerViewViewModel.swift */; };
+		B99C44442271013900431AF5 /* Roshambo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44432271013900431AF5 /* Roshambo.swift */; };
+		B99C44462271017F00431AF5 /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44452271017F00431AF5 /* GameResultView.swift */; };
+		B99C44482271024300431AF5 /* GameResultViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44472271024300431AF5 /* GameResultViewViewModel.swift */; };
+		B99C444C2271076900431AF5 /* PlayerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C444B2271076900431AF5 /* PlayerViewState.swift */; };
+		B99C44542271080500431AF5 /* PlayerViewViewModelCreatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C444F2271080500431AF5 /* PlayerViewViewModelCreatorFactory.swift */; };
+		B99C44562271080500431AF5 /* PlayerViewViewModelCreatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44512271080500431AF5 /* PlayerViewViewModelCreatorError.swift */; };
+		B99C44572271080500431AF5 /* PlayerViewViewModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44522271080500431AF5 /* PlayerViewViewModelCreator.swift */; };
+		B99C44582271080500431AF5 /* PlayerViewViewModelCreatorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44532271080500431AF5 /* PlayerViewViewModelCreatorDependencies.swift */; };
+		B99C445F22710A3700431AF5 /* GameResultServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C445A22710A3700431AF5 /* GameResultServiceFactory.swift */; };
+		B99C446122710A3700431AF5 /* GameResultServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C445C22710A3700431AF5 /* GameResultServiceError.swift */; };
+		B99C446222710A3700431AF5 /* GameResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C445D22710A3700431AF5 /* GameResultService.swift */; };
+		B99C446322710A3700431AF5 /* GameResultServiceDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C445E22710A3700431AF5 /* GameResultServiceDependencies.swift */; };
+		B99C446622710BA200431AF5 /* GameBoardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446522710BA200431AF5 /* GameBoardViewViewModel.swift */; };
+		B99C446D22710C9800431AF5 /* GameBoardViewModelCreatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446822710C9800431AF5 /* GameBoardViewModelCreatorFactory.swift */; };
+		B99C446F22710C9800431AF5 /* GameBoardViewModelCreatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446A22710C9800431AF5 /* GameBoardViewModelCreatorError.swift */; };
+		B99C447022710C9800431AF5 /* GameBoardViewModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */; };
+		B99C447122710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +55,41 @@
 		B99C441E2270E1F100431AF5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B99C441F2270E1F800431AF5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B99C44202270E1FF00431AF5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B99C44232270E48400431AF5 /* GameBoardInteractorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardInteractorDependencies.swift; sourceTree = "<group>"; };
+		B99C44242270E48400431AF5 /* GameBoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardPresenter.swift; sourceTree = "<group>"; };
+		B99C44252270E48400431AF5 /* GameBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardRouter.swift; sourceTree = "<group>"; };
+		B99C44262270E48400431AF5 /* GameBoardRouterDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardRouterDependencies.swift; sourceTree = "<group>"; };
+		B99C44272270E48400431AF5 /* GameBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
+		B99C44282270E48400431AF5 /* GameBoardWireframeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardWireframeError.swift; sourceTree = "<group>"; };
+		B99C44292270E48400431AF5 /* GameBoardPresenterDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardPresenterDependencies.swift; sourceTree = "<group>"; };
+		B99C442A2270E48400431AF5 /* GameBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardInteractor.swift; sourceTree = "<group>"; };
+		B99C442B2270E48400431AF5 /* GameBoardDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardDelegateProtocol.swift; sourceTree = "<group>"; };
+		B99C442C2270E48500431AF5 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		B99C442D2270E48500431AF5 /* GameBoardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardProtocol.swift; sourceTree = "<group>"; };
+		B99C442E2270E48500431AF5 /* GameBoardWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardWireframe.swift; sourceTree = "<group>"; };
+		B99C443C2270E5EB00431AF5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		B99C443E2270E77700431AF5 /* PlayerViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewDelegateProtocol.swift; sourceTree = "<group>"; };
+		B99C44402270E81A00431AF5 /* PlayerViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewViewModel.swift; sourceTree = "<group>"; };
+		B99C44432271013900431AF5 /* Roshambo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roshambo.swift; sourceTree = "<group>"; };
+		B99C44452271017F00431AF5 /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
+		B99C44472271024300431AF5 /* GameResultViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewViewModel.swift; sourceTree = "<group>"; };
+		B99C444B2271076900431AF5 /* PlayerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewState.swift; sourceTree = "<group>"; };
+		B99C444F2271080500431AF5 /* PlayerViewViewModelCreatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewViewModelCreatorFactory.swift; sourceTree = "<group>"; };
+		B99C44502271080500431AF5 /* PlayerViewViewModelCreatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewViewModelCreatorSpec.swift; sourceTree = "<group>"; };
+		B99C44512271080500431AF5 /* PlayerViewViewModelCreatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewViewModelCreatorError.swift; sourceTree = "<group>"; };
+		B99C44522271080500431AF5 /* PlayerViewViewModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewViewModelCreator.swift; sourceTree = "<group>"; };
+		B99C44532271080500431AF5 /* PlayerViewViewModelCreatorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewViewModelCreatorDependencies.swift; sourceTree = "<group>"; };
+		B99C445A22710A3700431AF5 /* GameResultServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultServiceFactory.swift; sourceTree = "<group>"; };
+		B99C445B22710A3700431AF5 /* GameResultServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultServiceSpec.swift; sourceTree = "<group>"; };
+		B99C445C22710A3700431AF5 /* GameResultServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultServiceError.swift; sourceTree = "<group>"; };
+		B99C445D22710A3700431AF5 /* GameResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultService.swift; sourceTree = "<group>"; };
+		B99C445E22710A3700431AF5 /* GameResultServiceDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultServiceDependencies.swift; sourceTree = "<group>"; };
+		B99C446522710BA200431AF5 /* GameBoardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewViewModel.swift; sourceTree = "<group>"; };
+		B99C446822710C9800431AF5 /* GameBoardViewModelCreatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorFactory.swift; sourceTree = "<group>"; };
+		B99C446922710C9800431AF5 /* GameBoardViewModelCreatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorSpec.swift; sourceTree = "<group>"; };
+		B99C446A22710C9800431AF5 /* GameBoardViewModelCreatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorError.swift; sourceTree = "<group>"; };
+		B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreator.swift; sourceTree = "<group>"; };
+		B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +152,7 @@
 		B99C441C2270E01100431AF5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B99C44212270E45D00431AF5 /* GameBoard */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -97,6 +165,128 @@
 				B99C44142270DFB800431AF5 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B99C44212270E45D00431AF5 /* GameBoard */ = {
+			isa = PBXGroup;
+			children = (
+				B99C44422271010000431AF5 /* Models */,
+				B99C444D227107CE00431AF5 /* Services */,
+				B99C446422710B9400431AF5 /* ViewModels */,
+				B99C443B2270E5D400431AF5 /* Views */,
+				B99C44222270E46F00431AF5 /* VIPER */,
+			);
+			path = GameBoard;
+			sourceTree = "<group>";
+		};
+		B99C44222270E46F00431AF5 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				B99C442B2270E48400431AF5 /* GameBoardDelegateProtocol.swift */,
+				B99C442A2270E48400431AF5 /* GameBoardInteractor.swift */,
+				B99C44232270E48400431AF5 /* GameBoardInteractorDependencies.swift */,
+				B99C44242270E48400431AF5 /* GameBoardPresenter.swift */,
+				B99C44292270E48400431AF5 /* GameBoardPresenterDependencies.swift */,
+				B99C442D2270E48500431AF5 /* GameBoardProtocol.swift */,
+				B99C44252270E48400431AF5 /* GameBoardRouter.swift */,
+				B99C44262270E48400431AF5 /* GameBoardRouterDependencies.swift */,
+				B99C442C2270E48500431AF5 /* GameBoardView.swift */,
+				B99C44272270E48400431AF5 /* GameBoardViewController.swift */,
+				B99C442E2270E48500431AF5 /* GameBoardWireframe.swift */,
+				B99C44282270E48400431AF5 /* GameBoardWireframeError.swift */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		B99C443B2270E5D400431AF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B99C444A2271072000431AF5 /* GameResult */,
+				B99C44492271071700431AF5 /* Player */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B99C44422271010000431AF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B99C44432271013900431AF5 /* Roshambo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B99C44492271071700431AF5 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				B99C443C2270E5EB00431AF5 /* PlayerView.swift */,
+				B99C443E2270E77700431AF5 /* PlayerViewDelegateProtocol.swift */,
+				B99C444B2271076900431AF5 /* PlayerViewState.swift */,
+				B99C44402270E81A00431AF5 /* PlayerViewViewModel.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		B99C444A2271072000431AF5 /* GameResult */ = {
+			isa = PBXGroup;
+			children = (
+				B99C44452271017F00431AF5 /* GameResultView.swift */,
+				B99C44472271024300431AF5 /* GameResultViewViewModel.swift */,
+			);
+			path = GameResult;
+			sourceTree = "<group>";
+		};
+		B99C444D227107CE00431AF5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B99C446722710C8400431AF5 /* GameBoardViewModelCreator */,
+				B99C445922710A2200431AF5 /* GameResult */,
+				B99C444E227107D600431AF5 /* PlayerViewModelCreator */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B99C444E227107D600431AF5 /* PlayerViewModelCreator */ = {
+			isa = PBXGroup;
+			children = (
+				B99C44522271080500431AF5 /* PlayerViewViewModelCreator.swift */,
+				B99C44532271080500431AF5 /* PlayerViewViewModelCreatorDependencies.swift */,
+				B99C44512271080500431AF5 /* PlayerViewViewModelCreatorError.swift */,
+				B99C444F2271080500431AF5 /* PlayerViewViewModelCreatorFactory.swift */,
+				B99C44502271080500431AF5 /* PlayerViewViewModelCreatorSpec.swift */,
+			);
+			path = PlayerViewModelCreator;
+			sourceTree = "<group>";
+		};
+		B99C445922710A2200431AF5 /* GameResult */ = {
+			isa = PBXGroup;
+			children = (
+				B99C445D22710A3700431AF5 /* GameResultService.swift */,
+				B99C445E22710A3700431AF5 /* GameResultServiceDependencies.swift */,
+				B99C445C22710A3700431AF5 /* GameResultServiceError.swift */,
+				B99C445A22710A3700431AF5 /* GameResultServiceFactory.swift */,
+				B99C445B22710A3700431AF5 /* GameResultServiceSpec.swift */,
+			);
+			path = GameResult;
+			sourceTree = "<group>";
+		};
+		B99C446422710B9400431AF5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B99C446522710BA200431AF5 /* GameBoardViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B99C446722710C8400431AF5 /* GameBoardViewModelCreator */ = {
+			isa = PBXGroup;
+			children = (
+				B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */,
+				B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */,
+				B99C446A22710C9800431AF5 /* GameBoardViewModelCreatorError.swift */,
+				B99C446822710C9800431AF5 /* GameBoardViewModelCreatorFactory.swift */,
+				B99C446922710C9800431AF5 /* GameBoardViewModelCreatorSpec.swift */,
+			);
+			path = GameBoardViewModelCreator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +359,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B99C44582271080500431AF5 /* PlayerViewViewModelCreatorDependencies.swift in Sources */,
+				B99C443F2270E77700431AF5 /* PlayerViewDelegateProtocol.swift in Sources */,
+				B99C447122710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift in Sources */,
 				B99C440B2270DFB500431AF5 /* ViewController.swift in Sources */,
+				B99C44362270E48500431AF5 /* GameBoardInteractor.swift in Sources */,
+				B99C44462271017F00431AF5 /* GameResultView.swift in Sources */,
+				B99C44302270E48500431AF5 /* GameBoardPresenter.swift in Sources */,
+				B99C44442271013900431AF5 /* Roshambo.swift in Sources */,
+				B99C44562271080500431AF5 /* PlayerViewViewModelCreatorError.swift in Sources */,
+				B99C443D2270E5EB00431AF5 /* PlayerView.swift in Sources */,
+				B99C442F2270E48500431AF5 /* GameBoardInteractorDependencies.swift in Sources */,
+				B99C447022710C9800431AF5 /* GameBoardViewModelCreator.swift in Sources */,
+				B99C44412270E81A00431AF5 /* PlayerViewViewModel.swift in Sources */,
+				B99C44312270E48500431AF5 /* GameBoardRouter.swift in Sources */,
+				B99C44332270E48500431AF5 /* GameBoardViewController.swift in Sources */,
+				B99C446D22710C9800431AF5 /* GameBoardViewModelCreatorFactory.swift in Sources */,
+				B99C446322710A3700431AF5 /* GameResultServiceDependencies.swift in Sources */,
+				B99C446622710BA200431AF5 /* GameBoardViewViewModel.swift in Sources */,
+				B99C445F22710A3700431AF5 /* GameResultServiceFactory.swift in Sources */,
+				B99C446222710A3700431AF5 /* GameResultService.swift in Sources */,
+				B99C444C2271076900431AF5 /* PlayerViewState.swift in Sources */,
+				B99C44542271080500431AF5 /* PlayerViewViewModelCreatorFactory.swift in Sources */,
+				B99C44392270E48500431AF5 /* GameBoardProtocol.swift in Sources */,
+				B99C44482271024300431AF5 /* GameResultViewViewModel.swift in Sources */,
+				B99C446122710A3700431AF5 /* GameResultServiceError.swift in Sources */,
+				B99C443A2270E48500431AF5 /* GameBoardWireframe.swift in Sources */,
+				B99C44322270E48500431AF5 /* GameBoardRouterDependencies.swift in Sources */,
+				B99C44372270E48500431AF5 /* GameBoardDelegateProtocol.swift in Sources */,
+				B99C446F22710C9800431AF5 /* GameBoardViewModelCreatorError.swift in Sources */,
+				B99C44342270E48500431AF5 /* GameBoardWireframeError.swift in Sources */,
+				B99C44572271080500431AF5 /* PlayerViewViewModelCreator.swift in Sources */,
+				B99C44352270E48500431AF5 /* GameBoardPresenterDependencies.swift in Sources */,
 				B99C44092270DFB500431AF5 /* AppDelegate.swift in Sources */,
+				B99C44382270E48500431AF5 /* GameBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -295,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
