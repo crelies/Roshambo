@@ -86,7 +86,11 @@ extension GameBoardViewController {
     private func setupView() {
         view.addSubview(gameBoardView)
         setupConstraints()
-        view.backgroundColor = .white
+        
+        view.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
+        
+        gameBoardView.roundCorners(cornerMask: .AllCorners, cornerRadius: 8)
+        
         navigationItem.rightBarButtonItem = resetBarButtonItem
     }
     
@@ -95,6 +99,8 @@ extension GameBoardViewController {
         gameBoardView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -16).isActive = true
         gameBoardView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 16).isActive = true
         gameBoardView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -16).isActive = true
+        gameBoardView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        gameBoardView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         gameBoardView.widthAnchor.constraint(lessThanOrEqualToConstant: 414).isActive = true
         gameBoardView.heightAnchor.constraint(lessThanOrEqualToConstant: 667).isActive = true
     }

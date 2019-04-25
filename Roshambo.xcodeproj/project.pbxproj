@@ -44,6 +44,8 @@
 		B99C447022710C9800431AF5 /* GameBoardViewModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */; };
 		B99C447122710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */; };
 		B99C447322722E5D00431AF5 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C447222722E5D00431AF5 /* GameResult.swift */; };
+		B99C4476227230E900431AF5 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C4475227230E900431AF5 /* UIView+RoundCorners.swift */; };
+		B99C44782272329F00431AF5 /* CACornerMask+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44772272329F00431AF5 /* CACornerMask+Corners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreator.swift; sourceTree = "<group>"; };
 		B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorDependencies.swift; sourceTree = "<group>"; };
 		B99C447222722E5D00431AF5 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		B99C4475227230E900431AF5 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
+		B99C44772272329F00431AF5 /* CACornerMask+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CACornerMask+Corners.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		B99C441B2270E00D00431AF5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B99C4474227230D300431AF5 /* Extensions */,
 				B99C44082270DFB500431AF5 /* AppDelegate.swift */,
 				B99C440A2270DFB500431AF5 /* ViewController.swift */,
 			);
@@ -292,6 +297,15 @@
 			path = GameBoardViewModelCreator;
 			sourceTree = "<group>";
 		};
+		B99C4474227230D300431AF5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B99C44772272329F00431AF5 /* CACornerMask+Corners.swift */,
+				B99C4475227230E900431AF5 /* UIView+RoundCorners.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +376,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B99C4476227230E900431AF5 /* UIView+RoundCorners.swift in Sources */,
+				B99C44782272329F00431AF5 /* CACornerMask+Corners.swift in Sources */,
 				B99C44582271080500431AF5 /* PlayerViewViewModelCreatorDependencies.swift in Sources */,
 				B99C443F2270E77700431AF5 /* PlayerViewDelegateProtocol.swift in Sources */,
 				B99C447122710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift in Sources */,

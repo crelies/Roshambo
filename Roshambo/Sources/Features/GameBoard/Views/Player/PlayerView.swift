@@ -18,6 +18,7 @@ final class PlayerView: UIView {
     private lazy var playerNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         return label
     }()
     
@@ -82,8 +83,7 @@ final class PlayerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addInitialSubviews()
-        setupConstraints()
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -126,6 +126,14 @@ extension PlayerView {
 }
 
 extension PlayerView {
+    private func setupView() {
+        backgroundColor = .white
+        roundCorners(cornerMask: .AllCorners, cornerRadius: 8)
+        
+        addInitialSubviews()
+        setupConstraints()
+    }
+    
     private func addInitialSubviews() {
         addSubview(playerNameLabel)
         
@@ -139,7 +147,7 @@ extension PlayerView {
     }
     
     private func setupConstraints() {
-        heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+        heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
         
         setupPlayerNameLabelConstraints()
         setupVerticalStackViewConstraints()

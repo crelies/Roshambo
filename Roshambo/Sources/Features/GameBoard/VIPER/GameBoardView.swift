@@ -28,7 +28,7 @@ final class GameBoardView: UIView {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 0
+        stackView.spacing = 8
         return stackView
     }()
     
@@ -86,7 +86,8 @@ extension GameBoardView {
   	private func setupView() {
         addSubviews()
         setupConstraints()
-        backgroundColor = .white
+        
+        backgroundColor = .clear
   	}
 
     private func addSubviews() {

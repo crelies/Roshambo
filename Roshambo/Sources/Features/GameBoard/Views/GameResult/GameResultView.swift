@@ -22,8 +22,7 @@ final class GameResultView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(resultLabel)
-        setupConstraints()
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,6 +37,12 @@ extension GameResultView: GameResultViewProtocol {
 }
 
 extension GameResultView {
+    private func setupView() {
+        backgroundColor = .clear
+        addSubview(resultLabel)
+        setupConstraints()
+    }
+    
     private func setupConstraints() {
         heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
         
