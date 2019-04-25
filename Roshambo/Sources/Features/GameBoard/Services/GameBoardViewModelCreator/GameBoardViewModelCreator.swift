@@ -30,22 +30,22 @@ extension GameBoardViewModelCreator: GameBoardViewModelCreatorProtocol {
     func createViewModel(forPlayerViewState playerViewState: PlayerViewState, computerViewState: PlayerViewState, winnerRoshambo: Roshambo?) -> GameBoardViewViewModel {
         var isPlayerWinner = false
         var isComputerWinner = false
-        var gameResult = "Choose wisely 😉"
+        var gameResult: GameResult = .none
         
         if case let PlayerViewState.result(playerRoshambo) = playerViewState,
             case PlayerViewState.result(_) = computerViewState {
             if let winnerRoshambo = winnerRoshambo {
                 isPlayerWinner = playerRoshambo == winnerRoshambo
                 isComputerWinner = !isPlayerWinner
-                gameResult = isPlayerWinner ? "You won 🚀" : "You lost 🙈"
+                gameResult = isPlayerWinner ? .playerWins : .computerWins
             } else {
-                gameResult = "Draw 😛"
+                gameResult = .draw
             }
         }
         
         let playerViewViewModel = dependencies.playerViewViewModelCreator.createViewModel(forState: playerViewState,
                                                                                           isWinner: isPlayerWinner)
-        let gameResultViewViewModel = GameResultViewViewModel(result: gameResult)
+        let gameResultViewViewModel = GameResultViewViewModel(gameResult: gameResult)
         let computerViewViewModel = dependencies.playerViewViewModelCreator.createViewModel(forState: computerViewState,
                                                                                             isWinner: isComputerWinner)
         return GameBoardViewViewModel(playerViewViewModel: playerViewViewModel,

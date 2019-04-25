@@ -43,6 +43,7 @@
 		B99C446F22710C9800431AF5 /* GameBoardViewModelCreatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446A22710C9800431AF5 /* GameBoardViewModelCreatorError.swift */; };
 		B99C447022710C9800431AF5 /* GameBoardViewModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */; };
 		B99C447122710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */; };
+		B99C447322722E5D00431AF5 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C447222722E5D00431AF5 /* GameResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		B99C446A22710C9800431AF5 /* GameBoardViewModelCreatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorError.swift; sourceTree = "<group>"; };
 		B99C446B22710C9800431AF5 /* GameBoardViewModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreator.swift; sourceTree = "<group>"; };
 		B99C446C22710C9800431AF5 /* GameBoardViewModelCreatorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModelCreatorDependencies.swift; sourceTree = "<group>"; };
+		B99C447222722E5D00431AF5 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			children = (
 				B99C44452271017F00431AF5 /* GameResultView.swift */,
 				B99C44472271024300431AF5 /* GameResultViewViewModel.swift */,
+				B99C447222722E5D00431AF5 /* GameResult.swift */,
 			);
 			path = GameResult;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				B99C44322270E48500431AF5 /* GameBoardRouterDependencies.swift in Sources */,
 				B99C44372270E48500431AF5 /* GameBoardDelegateProtocol.swift in Sources */,
 				B99C446F22710C9800431AF5 /* GameBoardViewModelCreatorError.swift in Sources */,
+				B99C447322722E5D00431AF5 /* GameResult.swift in Sources */,
 				B99C44342270E48500431AF5 /* GameBoardWireframeError.swift in Sources */,
 				B99C44572271080500431AF5 /* PlayerViewViewModelCreator.swift in Sources */,
 				B99C44352270E48500431AF5 /* GameBoardPresenterDependencies.swift in Sources */,

@@ -11,3 +11,18 @@ import UIKit
 struct GameResultViewViewModel {
     let result: String
 }
+
+extension GameResultViewViewModel {
+    init(gameResult: GameResult) {
+        switch gameResult {
+            case .computerWins:
+                result = "You lose 🙈"
+            case .draw:
+                result = "Draw 😛"
+            case .none:
+                result = "Choose wisely 😉"
+            case .playerWins:
+                result = "You win 🚀"
+        }
+    }
+}
