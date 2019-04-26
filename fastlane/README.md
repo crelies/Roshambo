@@ -21,11 +21,6 @@ or alternatively using `brew cask install fastlane`
 fastlane ios beta
 ```
 Creates a beta build and uploads it to the MS AppCenter
-### ios release
-```
-fastlane ios release
-```
-Pushes a new release build to the App Store
 ### ios provision
 ```
 fastlane ios provision
@@ -41,6 +36,11 @@ Takes screenshots
 fastlane ios build
 ```
 Creates ipa
+### ios testflight
+```
+fastlane ios testflight
+```
+Uploads to TestFlight
 ### ios upload
 ```
 fastlane ios upload

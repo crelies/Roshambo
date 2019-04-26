@@ -54,12 +54,10 @@ platform :ios do
 
         build_app(
                   scheme: betaScheme,
-                  output_name: ipa,
+                  output_name: ipaName,
                   configuration: betaConfiguration,
                   codesigning_identity: signingIdentity,
-                  export_method: adhocExportMethod,
-                  bundle_identifier: betaBundleIdentifier
-                  # provisioning_profile_identifier: adhocProvisioningProfileIdentifier
+                  export_method: adhocExportMethod
         )
                   
         appcenter_upload(
@@ -73,7 +71,7 @@ platform :ios do
     
     desc "Creates the provisioning profiles"
     lane :provision do
-    # Create App in Dev Center and App Store Connect
+        # Create App in Dev Center and App Store Connect
         produce(
                 app_name: appName,
                 language: language,
@@ -108,17 +106,17 @@ platform :ios do
 
         build_app(
                   scheme: appStoreScheme,
-                  output_name: ipa,
+                  output_name: ipaName,
                   configuration: releaseConfiguration,
                   codesigning_identity: signingIdentity,
-                  exportMethod: appstoreExportMethod,
-                  bundle_identifier: releaseBundleIdentifier
+                  exportMethod: appstoreExportMethod
+                  # bundle_identifier: releaseBundleIdentifier
                   # provisioning_profile_identifier: appstoreProvisioningProfileIdentifier
         )
     end
     
     desc "Uploads to TestFlight"
-    lane :testflight do
+    lane :upload_testflight do
         upload_to_testflight(
                              app_identifier: releaseBundleIdentifier,
                              ipa: ipa
@@ -144,6 +142,6 @@ platform :ios do
     end
 
     error do |lane, exception|
-      # This block is called if there was an error running a lane.
+        # This block is called if there was an error running a lane.
     end
 end
