@@ -1,0 +1,149 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+# Product
+appName = 'Roshambo Lite'
+language = 'English'
+appVersion = '1.0'
+sku = 'ROSHAMBO-0001'
+
+# General
+signingIdentity = 'iPhone Distribution: Christian Elies (766K8ALVVD)'
+ipaName = 'Roshambo.ipa'
+ipa = "./#{ipaName}"
+
+# Beta
+betaScheme = 'Roshambo Beta'
+betaConfiguration = 'Debug'
+betaBundleIdentifier = 'de.crelies.Roshambo.beta'
+adhocProvisioningProfileIdentifier = 'match AdHoc de.crelies.Roshambo.beta'
+adhocExportMethod = 'ad-hoc'
+
+# Release
+releaseScheme = 'Roshambo'
+releaseConfiguration = 'Release'
+releaseBundleIdentifier = 'de.crelies.Roshambo'
+appstoreProvisioningProfileIdentifier = 'match AppStore de.crelies.Roshambo'
+appstoreExportMethod = 'app-store'
+
+# AppCenter
+ownerName = 'crelies'
+appName = 'Roshambo'
+
+
+fastlane_version "2.121.1"
+
+default_platform(:ios)
+
+platform :ios do
+    desc "Creates a beta build and uploads it to the MS AppCenter"
+    lane :beta do |options|
+        apiToken = options[:apiToken]
+
+        build_app(
+                  scheme: betaScheme,
+                  output_name: ipa,
+                  configuration: betaConfiguration,
+                  codesigning_identity: signingIdentity,
+                  export_method: adhocExportMethod,
+                  bundle_identifier: betaBundleIdentifier
+                  # provisioning_profile_identifier: adhocProvisioningProfileIdentifier
+        )
+                  
+        appcenter_upload(
+                         api_token: apiToken,
+                         owner_name: ownerName,
+                         app_name: appName,
+                         ipa: ipa
+        )
+    end
+    
+    
+    desc "Creates the provisioning profiles"
+    lane :provision do
+    # Create App in Dev Center and App Store Connect
+        produce(
+                app_name: appName,
+                language: language,
+                app_version: appVersion,
+                sku: sku
+        )
+
+        # Create AdHoc provisioning profile (Beta)
+        sigh(
+             adhoc: true,
+             force: true,
+             app_identifier: betaBundleIdentifier,
+             provisioning_name: adhocProvisioningProfileIdentifier
+        )
+
+        # Create AppStore provisioning profile
+        sigh(
+             force: true,
+             app_identifier: releaseBundleIdentifier,
+             provisioning_name: appstoreProvisioningProfileIdentifier
+        )
+    end
+
+    desc "Takes screenshots"
+    lane :screenshot do
+        snapshot
+    end
+
+    desc "Creates ipa"
+    lane :build do
+        increment_build_number
+
+        build_app(
+                  scheme: appStoreScheme,
+                  output_name: ipa,
+                  configuration: releaseConfiguration,
+                  codesigning_identity: signingIdentity,
+                  exportMethod: appstoreExportMethod,
+                  bundle_identifier: releaseBundleIdentifier
+                  # provisioning_profile_identifier: appstoreProvisioningProfileIdentifier
+        )
+    end
+    
+    desc "Uploads to TestFlight"
+    lane :testflight do
+        upload_to_testflight(
+                             app_identifier: releaseBundleIdentifier,
+                             ipa: ipa
+        )
+    end
+
+    desc "Uploads to App Store"
+    lane :upload do
+        upload_to_app_store(
+                            app_identifier: releaseBundleIdentifier,
+                            ipa: ipa,
+                            submit_for_review: true
+        )
+    end
+
+    desc "Creates provisioning profiles, takes screenshots, builds and uploads to App Store"
+    lane :gogogo do
+        provision
+        screenshot
+        build
+        testflight
+        upload
+    end
+
+    error do |lane, exception|
+      # This block is called if there was an error running a lane.
+    end
+end

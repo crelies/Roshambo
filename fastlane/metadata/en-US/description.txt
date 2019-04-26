@@ -1,0 +1,3 @@
+Roshambo Lite is my simple version of the famous rock-paper-scissors game :-) Try to beat the computer if you can.
+
+Enjoy!
