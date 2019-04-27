@@ -15,7 +15,7 @@ protocol GameBoardViewModelCreatorProvider {
 }
 
 protocol GameBoardViewModelCreatorProtocol {
-    func createViewModel(forPlayerViewState playerViewState: PlayerViewState, computerViewState: PlayerViewState, winnerRoshambo: Roshambo?) -> GameBoardViewViewModel
+    func createViewModel(forPlayerViewState playerViewState: PlayerViewState, computerViewState: PlayerViewState, gameResult: GameResult) -> GameBoardViewViewModel
 }
 
 final class GameBoardViewModelCreator {
@@ -27,20 +27,16 @@ final class GameBoardViewModelCreator {
 }
 
 extension GameBoardViewModelCreator: GameBoardViewModelCreatorProtocol {
-    func createViewModel(forPlayerViewState playerViewState: PlayerViewState, computerViewState: PlayerViewState, winnerRoshambo: Roshambo?) -> GameBoardViewViewModel {
+    func createViewModel(forPlayerViewState playerViewState: PlayerViewState, computerViewState: PlayerViewState, gameResult: GameResult) -> GameBoardViewViewModel {
         var isPlayerWinner = false
         var isComputerWinner = false
-        var gameResult: GameResult = .none
         
-        if case let PlayerViewState.result(playerRoshambo) = playerViewState,
-            case PlayerViewState.result(_) = computerViewState {
-            if let winnerRoshambo = winnerRoshambo {
-                isPlayerWinner = playerRoshambo == winnerRoshambo
-                isComputerWinner = !isPlayerWinner
-                gameResult = isPlayerWinner ? .playerWins : .computerWins
-            } else {
-                gameResult = .draw
-            }
+        switch gameResult {
+            case .computerWins:
+                isComputerWinner = true
+            case .playerWins:
+                isPlayerWinner = true
+            default: ()
         }
         
         let playerViewViewModel = dependencies.playerViewViewModelCreator.createViewModel(forState: playerViewState,

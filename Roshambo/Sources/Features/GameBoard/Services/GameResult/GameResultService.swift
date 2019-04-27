@@ -15,7 +15,7 @@ protocol GameResultServiceProvider {
 }
 
 protocol GameResultServiceProtocol {
-    func getWinner(roshambo1: Roshambo, roshambo2: Roshambo) -> Roshambo?
+    func getGameResult(playerRoshambo: Roshambo, computerRoshambo: Roshambo) -> GameResult
 }
 
 final class GameResultService {
@@ -27,22 +27,22 @@ final class GameResultService {
 }
 
 extension GameResultService: GameResultServiceProtocol {
-    func getWinner(roshambo1: Roshambo, roshambo2: Roshambo) -> Roshambo? {
-        switch (roshambo1, roshambo2) {
+    func getGameResult(playerRoshambo: Roshambo, computerRoshambo: Roshambo) -> GameResult {
+        switch (playerRoshambo, computerRoshambo) {
             case (.scissors, .rock):
-                return .rock
+                return .computerWins(roshambo: .rock)
             case (.scissors, .paper):
-                return .scissors
+                return .playerWins(roshambo: .scissors)
             case (.rock, .paper):
-                return .paper
+                return .computerWins(roshambo: .paper)
             case (.rock, .scissors):
-                return .rock
+                return .playerWins(roshambo: .rock)
             case (.paper, .scissors):
-                return .scissors
+                return .computerWins(roshambo: .scissors)
             case (.paper, .rock):
-                return .paper
+                return .playerWins(roshambo: .paper)
             default:
-                return nil
+                return .draw
         }
     }
 }

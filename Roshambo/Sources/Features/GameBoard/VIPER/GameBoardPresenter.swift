@@ -47,7 +47,7 @@ extension GameBoardPresenter: GameBoardPresenterProtocol {
     func viewDidLoad() {
         view?.setPlayerName("You")
         view?.setComputerPlayerName("Computer")
-        updateUI(usingWinnerRoshambo: nil)
+        updateUI(usingGameResult: .none)
     }
     
     func didPressScissorsButton(_ view: PlayerViewProtocol) {
@@ -57,9 +57,9 @@ extension GameBoardPresenter: GameBoardPresenterProtocol {
         let computerRoshambo = interactor.generateRoshambo()
         computerViewState = .result(roshambo: computerRoshambo)
         
-        let winnerRoshambo = interactor.getWinner(playerRoshambo: playerRoshambo,
+        let gameResult = interactor.getGameResult(playerRoshambo: playerRoshambo,
                                                   computerRoshambo: computerRoshambo)
-        updateUI(usingWinnerRoshambo: winnerRoshambo)
+        updateUI(usingGameResult: gameResult)
     }
     
     func didPressRockButton(_ view: PlayerViewProtocol) {
@@ -69,9 +69,9 @@ extension GameBoardPresenter: GameBoardPresenterProtocol {
         let computerRoshambo = interactor.generateRoshambo()
         computerViewState = .result(roshambo: computerRoshambo)
         
-        let winnerRoshambo = interactor.getWinner(playerRoshambo: playerRoshambo,
+        let gameResult = interactor.getGameResult(playerRoshambo: playerRoshambo,
                                                   computerRoshambo: computerRoshambo)
-        updateUI(usingWinnerRoshambo: winnerRoshambo)
+        updateUI(usingGameResult: gameResult)
     }
     
     func didPressPaperButton(_ view: PlayerViewProtocol) {
@@ -81,24 +81,24 @@ extension GameBoardPresenter: GameBoardPresenterProtocol {
         let computerRoshambo = interactor.generateRoshambo()
         computerViewState = .result(roshambo: computerRoshambo)
         
-        let winnerRoshambo = interactor.getWinner(playerRoshambo: playerRoshambo,
+        let gameResult = interactor.getGameResult(playerRoshambo: playerRoshambo,
                                                   computerRoshambo: computerRoshambo)
-        updateUI(usingWinnerRoshambo: winnerRoshambo)
+        updateUI(usingGameResult: gameResult)
     }
     
     func didPressResetBarButtonItem() {
         playerViewState = .takeAction
         computerViewState = .initial
         
-        updateUI(usingWinnerRoshambo: nil)
+        updateUI(usingGameResult: .none)
     }
 }
 
 extension GameBoardPresenter {
-    private func updateUI(usingWinnerRoshambo winnerRoshambo: Roshambo?) {
+    private func updateUI(usingGameResult gameResult: GameResult) {
         let gameBoardViewViewModel = dependencies.gameBoardViewModelCreator.createViewModel(forPlayerViewState: playerViewState,
                                                                                             computerViewState: computerViewState,
-                                                                                            winnerRoshambo: winnerRoshambo)
+                                                                                            gameResult: gameResult)
         view?.updateUI(withViewModel: gameBoardViewViewModel)
     }
 }

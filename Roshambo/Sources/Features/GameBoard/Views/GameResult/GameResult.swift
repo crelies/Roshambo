@@ -9,8 +9,8 @@
 import UIKit
 
 enum GameResult {
-    case computerWins
+    case computerWins(roshambo: Roshambo)
     case draw
     case none
-    case playerWins
+    case playerWins(roshambo: Roshambo)
 }

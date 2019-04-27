@@ -13,7 +13,7 @@ import Foundation
 
 protocol GameBoardInteractorProtocol {
     func generateRoshambo() -> Roshambo
-    func getWinner(playerRoshambo: Roshambo, computerRoshambo: Roshambo) -> Roshambo?
+    func getGameResult(playerRoshambo: Roshambo, computerRoshambo: Roshambo) -> GameResult
 }
 
 final class GameBoardInteractor {
@@ -29,7 +29,7 @@ extension GameBoardInteractor: GameBoardInteractorProtocol {
         return Roshambo.allCases.randomElement()!
     }
     
-    func getWinner(playerRoshambo: Roshambo, computerRoshambo: Roshambo) -> Roshambo? {
-        return dependencies.gameResultService.getWinner(roshambo1: playerRoshambo, roshambo2: computerRoshambo)
+    func getGameResult(playerRoshambo: Roshambo, computerRoshambo: Roshambo) -> GameResult {
+        return dependencies.gameResultService.getGameResult(playerRoshambo: playerRoshambo, computerRoshambo: computerRoshambo)
     }
 }
