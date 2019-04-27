@@ -11,7 +11,7 @@ import UIKit
 struct MetricConstants {
     static let cornerRadius: CGFloat = 8
     static let defaultFontSize: CGFloat = 17
-    static let winnerFontSize: CGFloat = 44
+    static let winnerFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.08 : UIScreen.main.bounds.height * 0.05
 }
 
 extension MetricConstants {
@@ -52,15 +52,15 @@ extension MetricConstants {
 extension MetricConstants {
     struct PlayerView {
         static let minHeight: CGFloat = PlayerView.PlayerNameLabel.insets.top + PlayerNameLabel.fontSize + VerticalStackView.insets.top + winnerFontSize + VerticalStackView.insets.bottom
+        static let emojiFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.05 : UIScreen.main.bounds.height * 0.03
         
         struct ActionButton {
-            static let fontSize: CGFloat = 24
-            static let font: UIFont = UIFont.systemFont(ofSize: ActionButton.fontSize)
+            static let font: UIFont = UIFont.systemFont(ofSize: emojiFontSize)
         }
         
         struct InformationLabel {
             static let font: UIFont = UIFont.systemFont(ofSize: defaultFontSize, weight: .regular)
-            static let resultFontSize: CGFloat = 24
+            static let resultFontSize: CGFloat = emojiFontSize
         }
         
         struct PlayerNameLabel {
