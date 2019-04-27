@@ -26,7 +26,7 @@ ipa = "./#{ipaName}"
 
 # Beta
 betaScheme = 'Roshambo Beta'
-betaConfiguration = 'Debug'
+betaConfiguration = 'Beta'
 betaBundleIdentifier = 'de.crelies.Roshambo.beta'
 adhocProvisioningProfileIdentifier = 'match AdHoc de.crelies.Roshambo.beta'
 adhocExportMethod = 'ad-hoc'

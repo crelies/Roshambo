@@ -36,9 +36,9 @@ Takes screenshots
 fastlane ios build
 ```
 Creates ipa
-### ios testflight
+### ios upload_testflight
 ```
-fastlane ios testflight
+fastlane ios upload_testflight
 ```
 Uploads to TestFlight
 ### ios upload
