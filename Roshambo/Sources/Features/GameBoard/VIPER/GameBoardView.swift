@@ -27,7 +27,7 @@ final class GameBoardView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.spacing = MetricConstants.GameBoardView.Spacing.mainStackView
         return stackView
     }()

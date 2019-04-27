@@ -27,6 +27,12 @@ final class GameBoardViewController: UIViewController {
                                                  action: #selector(didPressResetBarButtonItem(_:)))
         return resetBarButtonItem
     }()
+    
+    private lazy var gameBoardViewContainer: UIView = {
+        let gameBoardViewContainer = UIView()
+        gameBoardViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        return gameBoardViewContainer
+    }()
 
     private lazy var gameBoardView: (UIView & GameBoardViewViewProtocol) = {
         let gameBoardView = GameBoardView()
@@ -84,10 +90,13 @@ extension GameBoardViewController: PlayerViewDelegateProtocol {
 
 extension GameBoardViewController {
     private func setupView() {
-        view.addSubview(gameBoardView)
+        gameBoardViewContainer.addSubview(gameBoardView)
+        view.addSubview(gameBoardViewContainer)
+        
         setupConstraints()
         
         view.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
+        gameBoardViewContainer.backgroundColor = .clear
         
         gameBoardView.roundCorners(cornerMask: .AllCorners, cornerRadius: MetricConstants.cornerRadius)
         
@@ -95,17 +104,52 @@ extension GameBoardViewController {
     }
     
     private func setupConstraints() {
-        gameBoardView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: MetricConstants.GameBoardView.insets.top).isActive = true
-        gameBoardView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -MetricConstants.GameBoardView.insets.bottom).isActive = true
-        gameBoardView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: MetricConstants.GameBoardView.insets.left).isActive = true
-        gameBoardView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -MetricConstants.GameBoardView.insets.right).isActive = true
+        setupGameBoardViewContainerConstraints()
+        setupGameBoardViewConstraints()
+    }
+    
+    private func setupGameBoardViewContainerConstraints() {
+        gameBoardViewContainer.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        gameBoardViewContainer.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
         
-        gameBoardView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        gameBoardView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        setupGameBoardViewContainerEdgesConstraints()
+        setupGameBoardViewContainerSizeConstraints()
+    }
+    
+    private func setupGameBoardViewContainerEdgesConstraints() {
+        let gameBoardViewContainerTopConstraint = gameBoardViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: MetricConstants.GameBoardViewContainer.insets.top)
+        gameBoardViewContainerTopConstraint.priority = UILayoutPriority(999)
+        gameBoardViewContainerTopConstraint.isActive = true
+        gameBoardViewContainer.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: MetricConstants.GameBoardViewContainer.minimumInsets.top).isActive = true
+
+        let gameBoardViewContainerBottomConstraint = gameBoardViewContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -MetricConstants.GameBoardViewContainer.insets.bottom)
+        gameBoardViewContainerBottomConstraint.priority = UILayoutPriority(998)
+        gameBoardViewContainerBottomConstraint.isActive = true
+        gameBoardViewContainer.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -MetricConstants.GameBoardViewContainer.minimumInsets.bottom).isActive = true
+
+        let gameBoardViewContainerLeadingConstraint = gameBoardViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: MetricConstants.GameBoardViewContainer.insets.left)
+        gameBoardViewContainerLeadingConstraint.priority = UILayoutPriority(998)
+        gameBoardViewContainerLeadingConstraint.isActive = true
+        gameBoardViewContainer.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: MetricConstants.GameBoardViewContainer.minimumInsets.left).isActive = true
+
+        let gameBoardViewContainerTrailingConstraint = gameBoardViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -MetricConstants.GameBoardViewContainer.insets.right)
+        gameBoardViewContainerTrailingConstraint.priority = UILayoutPriority(998)
+        gameBoardViewContainerTrailingConstraint.isActive = true
+        gameBoardViewContainer.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -MetricConstants.GameBoardViewContainer.minimumInsets.right).isActive = true
+    }
+    
+    private func setupGameBoardViewContainerSizeConstraints() {
+        let gameBoardViewContainerWidthConstraint = gameBoardViewContainer.widthAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameBoardView.maxWidth)
+        gameBoardViewContainerWidthConstraint.priority = UILayoutPriority(999)
+        gameBoardViewContainerWidthConstraint.isActive = true
         
-        gameBoardView.widthAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.GameBoardView.minWidth).isActive = true
-        gameBoardView.widthAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameBoardView.maxWidth).isActive = true
-        gameBoardView.heightAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.GameBoardView.minHeight).isActive = true
-        gameBoardView.heightAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameBoardView.maxHeight).isActive = true
+        gameBoardViewContainer.heightAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameBoardView.maxHeight).isActive = true
+    }
+    
+    private func setupGameBoardViewConstraints() {
+        gameBoardView.topAnchor.constraint(equalTo: gameBoardViewContainer.topAnchor).isActive = true
+        gameBoardView.bottomAnchor.constraint(equalTo: gameBoardViewContainer.bottomAnchor).isActive = true
+        gameBoardView.leadingAnchor.constraint(equalTo: gameBoardViewContainer.leadingAnchor).isActive = true
+        gameBoardView.trailingAnchor.constraint(equalTo: gameBoardViewContainer.trailingAnchor).isActive = true
     }
 }

@@ -103,9 +103,22 @@ extension PlayerView: PlayerViewProtocol {
         informationLabel.font = updatedFont
         
         if viewModel.areActionButtonsHidden {
+            actionButtonStackView.removeArrangedSubview(scissorsButton)
+            scissorsButton.removeFromSuperview()
+            
+            actionButtonStackView.removeArrangedSubview(rockButton)
+            rockButton.removeFromSuperview()
+            
+            actionButtonStackView.removeArrangedSubview(paperButton)
+            paperButton.removeFromSuperview()
+            
             verticalStackView.removeArrangedSubview(actionButtonStackView)
             actionButtonStackView.removeFromSuperview()
         } else {
+            actionButtonStackView.addArrangedSubview(scissorsButton)
+            actionButtonStackView.addArrangedSubview(rockButton)
+            actionButtonStackView.addArrangedSubview(paperButton)
+            
             verticalStackView.addArrangedSubview(actionButtonStackView)
         }
     }
@@ -140,10 +153,6 @@ extension PlayerView {
         verticalStackView.addArrangedSubview(informationLabel)
         
         addSubview(verticalStackView)
-        
-        actionButtonStackView.addArrangedSubview(scissorsButton)
-        actionButtonStackView.addArrangedSubview(rockButton)
-        actionButtonStackView.addArrangedSubview(paperButton)
     }
     
     private func setupConstraints() {
@@ -164,5 +173,6 @@ extension PlayerView {
         verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.left).isActive = true
         verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.right).isActive = true
         verticalStackView.topAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.bottomAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.top).isActive = true
+        verticalStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.bottom).isActive = true
     }
 }

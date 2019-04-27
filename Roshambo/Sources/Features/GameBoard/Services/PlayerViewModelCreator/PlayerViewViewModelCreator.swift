@@ -32,15 +32,15 @@ extension PlayerViewViewModelCreator: PlayerViewViewModelCreatorProtocol {
             case .initial:
                 return PlayerViewViewModel(isInformationLabelHidden: false,
                                            informationLabelText: state.displayText,
-                                           informationLabelFontSize: MetricConstants.PlayerView.InformationLabel.defaultFontSize,
+                                           informationLabelFontSize: MetricConstants.defaultFontSize,
                                            areActionButtonsHidden: true)
             case .takeAction:
                 return PlayerViewViewModel(isInformationLabelHidden: true,
                                            informationLabelText: state.displayText,
-                                           informationLabelFontSize: MetricConstants.PlayerView.InformationLabel.defaultFontSize,
+                                           informationLabelFontSize: MetricConstants.defaultFontSize,
                                            areActionButtonsHidden: false)
             case .result:
-                let informationLabelFontSize: CGFloat = isWinner ? MetricConstants.PlayerView.InformationLabel.winnerFontSize : MetricConstants.PlayerView.InformationLabel.resultFontSize
+                let informationLabelFontSize: CGFloat = isWinner ? MetricConstants.winnerFontSize : MetricConstants.PlayerView.InformationLabel.resultFontSize
                 return PlayerViewViewModel(isInformationLabelHidden: false,
                                            informationLabelText: state.displayText,
                                            informationLabelFontSize: informationLabelFontSize,

@@ -44,8 +44,6 @@ extension GameResultView {
     }
     
     private func setupConstraints() {
-        heightAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameResultView.height).isActive = true
-        
         resultLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         resultLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         resultLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: MetricConstants.GameResultView.ResultLabel.insets.left).isActive = true
