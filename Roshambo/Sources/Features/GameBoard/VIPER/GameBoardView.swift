@@ -27,8 +27,8 @@ final class GameBoardView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.spacing = 8
+        stackView.distribution = .fillProportionally
+        stackView.spacing = MetricConstants.GameBoardView.Spacing.mainStackView
         return stackView
     }()
     
@@ -101,7 +101,7 @@ extension GameBoardView {
         setupMainStackViewConstraints()
         
         playerView.heightAnchor.constraint(equalTo: computerView.heightAnchor, multiplier: 1).isActive = true
-        gameResultView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        gameResultView.heightAnchor.constraint(equalToConstant: MetricConstants.GameResultView.height).isActive = true
     }
     
     private func setupMainStackViewConstraints() {

@@ -13,3 +13,16 @@ enum PlayerViewState {
     case takeAction
     case result(roshambo: Roshambo)
 }
+
+extension PlayerViewState {
+    var displayText: String {
+        switch self {
+            case .initial:
+                return "You first 😉"
+            case .takeAction:
+                return ""
+            case .result(let roshambo):
+                return roshambo.displayText
+        }
+    }
+}

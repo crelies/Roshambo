@@ -89,19 +89,23 @@ extension GameBoardViewController {
         
         view.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
         
-        gameBoardView.roundCorners(cornerMask: .AllCorners, cornerRadius: 8)
+        gameBoardView.roundCorners(cornerMask: .AllCorners, cornerRadius: MetricConstants.cornerRadius)
         
         navigationItem.rightBarButtonItem = resetBarButtonItem
     }
     
     private func setupConstraints() {
-        gameBoardView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        gameBoardView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -16).isActive = true
-        gameBoardView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 16).isActive = true
-        gameBoardView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -16).isActive = true
+        gameBoardView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: MetricConstants.GameBoardView.insets.top).isActive = true
+        gameBoardView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -MetricConstants.GameBoardView.insets.bottom).isActive = true
+        gameBoardView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: MetricConstants.GameBoardView.insets.left).isActive = true
+        gameBoardView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -MetricConstants.GameBoardView.insets.right).isActive = true
+        
         gameBoardView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        gameBoardView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        gameBoardView.widthAnchor.constraint(lessThanOrEqualToConstant: 414).isActive = true
-        gameBoardView.heightAnchor.constraint(lessThanOrEqualToConstant: 667).isActive = true
+        gameBoardView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        
+        gameBoardView.widthAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.GameBoardView.minWidth).isActive = true
+        gameBoardView.widthAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameBoardView.maxWidth).isActive = true
+        gameBoardView.heightAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.GameBoardView.minHeight).isActive = true
+        gameBoardView.heightAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameBoardView.maxHeight).isActive = true
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B92F53432273A88E008F3147 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F53422273A88E008F3147 /* SnapshotHelper.swift */; };
 		B92F53452273AD54008F3147 /* TakeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F53442273AD54008F3147 /* TakeScreenshots.swift */; };
+		B96CE13022746FDB0027DB3B /* MetricConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CE12F22746FDB0027DB3B /* MetricConstants.swift */; };
 		B99C44092270DFB500431AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44082270DFB500431AF5 /* AppDelegate.swift */; };
 		B99C440B2270DFB500431AF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C440A2270DFB500431AF5 /* ViewController.swift */; };
 		B99C44102270DFB800431AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99C440F2270DFB800431AF5 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		B92F533C2273A86E008F3147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92F53422273A88E008F3147 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		B92F53442273AD54008F3147 /* TakeScreenshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeScreenshots.swift; sourceTree = "<group>"; };
+		B96CE12F22746FDB0027DB3B /* MetricConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricConstants.swift; sourceTree = "<group>"; };
 		B99C44052270DFB500431AF5 /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99C44082270DFB500431AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B99C440A2270DFB500431AF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B96CE12E22746FCB0027DB3B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B96CE12F22746FDB0027DB3B /* MetricConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		B99C43FC2270DFB500431AF5 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 		B99C44212270E45D00431AF5 /* GameBoard */ = {
 			isa = PBXGroup;
 			children = (
+				B96CE12E22746FCB0027DB3B /* Constants */,
 				B99C44422271010000431AF5 /* Models */,
 				B99C444D227107CE00431AF5 /* Services */,
 				B99C446422710B9400431AF5 /* ViewModels */,
@@ -493,6 +504,7 @@
 				B99C444C2271076900431AF5 /* PlayerViewState.swift in Sources */,
 				B99C44542271080500431AF5 /* PlayerViewViewModelCreatorFactory.swift in Sources */,
 				B99C44392270E48500431AF5 /* GameBoardProtocol.swift in Sources */,
+				B96CE13022746FDB0027DB3B /* MetricConstants.swift in Sources */,
 				B99C44482271024300431AF5 /* GameResultViewViewModel.swift in Sources */,
 				B99C446122710A3700431AF5 /* GameResultServiceError.swift in Sources */,
 				B99C443A2270E48500431AF5 /* GameBoardWireframe.swift in Sources */,
@@ -571,6 +583,110 @@
 				TEST_TARGET_NAME = Roshambo;
 			};
 			name = Release;
+		};
+		B96CE131227471EF0027DB3B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Beta;
+		};
+		B96CE132227471EF0027DB3B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 766K8ALVVD;
+				INFOPLIST_FILE = Roshambo/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo.beta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc de.crelies.Roshambo.beta";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Beta;
+		};
+		B96CE133227471EF0027DB3B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 766K8ALVVD;
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development de.crelies.*";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Roshambo;
+			};
+			name = Beta;
 		};
 		B99C44152270DFB800431AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -698,7 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 766K8ALVVD;
 				INFOPLIST_FILE = Roshambo/Resources/Info.plist;
@@ -708,7 +824,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc de.crelies.Roshambo.beta";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development de.crelies.*";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -739,6 +855,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B92F53402273A86E008F3147 /* Debug */,
+				B96CE133227471EF0027DB3B /* Beta */,
 				B92F53412273A86E008F3147 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -748,6 +865,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B99C44152270DFB800431AF5 /* Debug */,
+				B96CE131227471EF0027DB3B /* Beta */,
 				B99C44162270DFB800431AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -757,6 +875,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B99C44182270DFB800431AF5 /* Debug */,
+				B96CE132227471EF0027DB3B /* Beta */,
 				B99C44192270DFB800431AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

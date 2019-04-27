@@ -31,18 +31,18 @@ extension PlayerViewViewModelCreator: PlayerViewViewModelCreatorProtocol {
         switch state {
             case .initial:
                 return PlayerViewViewModel(isInformationLabelHidden: false,
-                                           informationLabelText: "You first 😉",
-                                           informationLabelFontSize: 17,
+                                           informationLabelText: state.displayText,
+                                           informationLabelFontSize: MetricConstants.PlayerView.InformationLabel.defaultFontSize,
                                            areActionButtonsHidden: true)
             case .takeAction:
                 return PlayerViewViewModel(isInformationLabelHidden: true,
-                                           informationLabelText: "",
-                                           informationLabelFontSize: 28,
+                                           informationLabelText: state.displayText,
+                                           informationLabelFontSize: MetricConstants.PlayerView.InformationLabel.defaultFontSize,
                                            areActionButtonsHidden: false)
-            case .result(let roshambo):
-                let informationLabelFontSize: CGFloat = isWinner ? 72 : 28
+            case .result:
+                let informationLabelFontSize: CGFloat = isWinner ? MetricConstants.PlayerView.InformationLabel.winnerFontSize : MetricConstants.PlayerView.InformationLabel.resultFontSize
                 return PlayerViewViewModel(isInformationLabelHidden: false,
-                                           informationLabelText: roshambo.displayText,
+                                           informationLabelText: state.displayText,
                                            informationLabelFontSize: informationLabelFontSize,
                                            areActionButtonsHidden: true)
         }

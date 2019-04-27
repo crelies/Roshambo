@@ -16,7 +16,7 @@ final class GameResultView: UIView {
     private lazy var resultLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        label.font = MetricConstants.GameResultView.ResultLabel.defaultFont
         return label
     }()
     
@@ -44,11 +44,11 @@ extension GameResultView {
     }
     
     private func setupConstraints() {
-        heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+        heightAnchor.constraint(lessThanOrEqualToConstant: MetricConstants.GameResultView.height).isActive = true
         
         resultLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         resultLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        resultLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 16).isActive = true
-        resultLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -16).isActive = true
+        resultLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: MetricConstants.GameResultView.ResultLabel.insets.left).isActive = true
+        resultLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -MetricConstants.GameResultView.ResultLabel.insets.right).isActive = true
     }
 }

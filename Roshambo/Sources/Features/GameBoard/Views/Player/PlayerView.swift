@@ -18,7 +18,7 @@ final class PlayerView: UIView {
     private lazy var playerNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        label.font = MetricConstants.PlayerView.PlayerNameLabel.font
         return label
     }()
     
@@ -32,13 +32,13 @@ final class PlayerView: UIView {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 8
         return stackView
     }()
     
     private lazy var informationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = MetricConstants.PlayerView.InformationLabel.font
         return label
     }()
     
@@ -48,7 +48,7 @@ final class PlayerView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 8
+        stackView.spacing = MetricConstants.PlayerView.Spacing.actionButtonStackView
         return stackView
     }()
     
@@ -56,7 +56,7 @@ final class PlayerView: UIView {
         let button = UIButton(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✌️", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 28)
+        button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
         button.addTarget(self, action: #selector(didPressScissorsButton(_:)), for: .touchUpInside)
         return button
     }()
@@ -65,7 +65,7 @@ final class PlayerView: UIView {
         let button = UIButton(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✊", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 28)
+        button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
         button.addTarget(self, action: #selector(didPressRockButton(_:)), for: .touchUpInside)
         return button
     }()
@@ -74,7 +74,7 @@ final class PlayerView: UIView {
         let button = UIButton(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("🤚", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 28)
+        button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
         button.addTarget(self, action: #selector(didPressPaperButton(_:)), for: .touchUpInside)
         return button
     }()
@@ -128,7 +128,7 @@ extension PlayerView {
 extension PlayerView {
     private func setupView() {
         backgroundColor = .white
-        roundCorners(cornerMask: .AllCorners, cornerRadius: 8)
+        roundCorners(cornerMask: .AllCorners, cornerRadius: MetricConstants.cornerRadius)
         
         addInitialSubviews()
         setupConstraints()
@@ -147,22 +147,22 @@ extension PlayerView {
     }
     
     private func setupConstraints() {
-        heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
+        heightAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.PlayerView.minHeight).isActive = true
         
         setupPlayerNameLabelConstraints()
         setupVerticalStackViewConstraints()
     }
     
     private func setupPlayerNameLabelConstraints() {
-        playerNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
-        playerNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        playerNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: MetricConstants.PlayerView.PlayerNameLabel.insets.top).isActive = true
+        playerNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: MetricConstants.PlayerView.PlayerNameLabel.insets.left).isActive = true
     }
     
     private func setupVerticalStackViewConstraints() {
         verticalStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         verticalStackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 16).isActive = true
-        verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -16).isActive = true
-        verticalStackView.topAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.bottomAnchor, constant: 16).isActive = true
+        verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.left).isActive = true
+        verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.right).isActive = true
+        verticalStackView.topAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.bottomAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.top).isActive = true
     }
 }
