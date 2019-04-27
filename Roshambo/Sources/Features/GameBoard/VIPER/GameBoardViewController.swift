@@ -21,6 +21,13 @@ protocol GameBoardViewProtocol: GameBoardProtocol {
 final class GameBoardViewController: UIViewController {
     private var presenter: GameBoardPresenterProtocol?
     
+    private lazy var infoBarButtonItem: UIBarButtonItem = {
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(didPressInfoBarButtonItem(_:)), for: .touchUpInside)
+        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+        return infoBarButtonItem
+    }()
+    
     private lazy var resetBarButtonItem: UIBarButtonItem = {
         let resetBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
                                                  target: self,
@@ -45,6 +52,10 @@ final class GameBoardViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         presenter?.viewDidLoad()
+    }
+    
+    @objc private func didPressInfoBarButtonItem(_ sender: UIBarButtonItem) {
+        presenter?.didPressInfoBarButtonItem()
     }
     
     @objc private func didPressResetBarButtonItem(_ sender: UIBarButtonItem) {
@@ -100,6 +111,7 @@ extension GameBoardViewController {
         
         gameBoardView.roundCorners(cornerMask: .AllCorners, cornerRadius: MetricConstants.cornerRadius)
         
+        navigationItem.leftBarButtonItem = infoBarButtonItem
         navigationItem.rightBarButtonItem = resetBarButtonItem
     }
     

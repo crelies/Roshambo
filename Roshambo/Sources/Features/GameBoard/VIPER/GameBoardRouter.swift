@@ -9,9 +9,11 @@
 //  https://www.christianelies.de
 //
 
+import SafariServices
 import UIKit
 
 protocol GameBoardRouterProtocol {
+    func showDeveloperWebsite()
     func dismiss(animated: Bool)
 }
 
@@ -27,6 +29,11 @@ final class GameBoardRouter {
 }
 
 extension GameBoardRouter: GameBoardRouterProtocol {
+    func showDeveloperWebsite() {
+        let safariViewController = SFSafariViewController(url: IdentifierConstants.developerWebsiteURL)
+        viewController?.present(safariViewController, animated: true, completion: nil)
+    }
+    
 	func dismiss(animated: Bool) {
 		viewController?.dismiss(animated: animated, completion: nil)
 	}

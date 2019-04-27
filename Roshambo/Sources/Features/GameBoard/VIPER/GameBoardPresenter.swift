@@ -16,6 +16,7 @@ protocol GameBoardPresenterProtocol: class {
     func didPressScissorsButton(_ view: PlayerViewProtocol)
     func didPressRockButton(_ view: PlayerViewProtocol)
     func didPressPaperButton(_ view: PlayerViewProtocol)
+    func didPressInfoBarButtonItem()
     func didPressResetBarButtonItem()
 }
 
@@ -84,6 +85,10 @@ extension GameBoardPresenter: GameBoardPresenterProtocol {
         let gameResult = interactor.getGameResult(playerRoshambo: playerRoshambo,
                                                   computerRoshambo: computerRoshambo)
         updateUI(usingGameResult: gameResult)
+    }
+    
+    func didPressInfoBarButtonItem() {
+        router.showDeveloperWebsite()
     }
     
     func didPressResetBarButtonItem() {
