@@ -56,9 +56,10 @@ extension MetricConstants {
         static let emojiFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.05 : UIScreen.main.bounds.height * 0.03
         
         struct ActionButton {
-            static let width: CGFloat = 46
+            static let width: CGFloat = MetricConstants.winnerFontSize + 6
+            static let height: CGFloat = ActionButton.width
             static let font: UIFont = UIFont.systemFont(ofSize: emojiFontSize)
-            static let borderColor: CGColor = MetricConstants.backgroundColor.cgColor
+            static let borderColor: CGColor = UIColor(red: 12/255, green: 23/255, blue: 40/255, alpha: 1).cgColor
             static let borderWidth: CGFloat = 2
         }
         

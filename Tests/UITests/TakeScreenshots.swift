@@ -15,5 +15,9 @@ final class TakeScreenshots: XCTestCase {
         app.launch()
         
         snapshot("01Initial")
+        
+        app.buttons["✊"].tap()
+        
+        snapshot("02Result")
     }
 }

@@ -14,3 +14,20 @@ enum GameResult {
     case none
     case playerWins(roshambo: Roshambo)
 }
+
+extension GameResult: Equatable {
+    static func ==(lhs: GameResult, rhs: GameResult) -> Bool {
+        switch (lhs, rhs) {
+            case (.computerWins(let lhsRoshambo), .computerWins(let rhsRoshambo)):
+                return lhsRoshambo == rhsRoshambo
+            case (.draw, .draw):
+                return true
+            case (.none, .none):
+                return true
+            case (.playerWins(let lhsRoshambo), .playerWins(let rhsRoshambo)):
+                return lhsRoshambo == rhsRoshambo
+            default:
+                return false
+        }
+    }
+}

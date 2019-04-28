@@ -10,6 +10,7 @@
 		B92F53432273A88E008F3147 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F53422273A88E008F3147 /* SnapshotHelper.swift */; };
 		B92F53452273AD54008F3147 /* TakeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F53442273AD54008F3147 /* TakeScreenshots.swift */; };
 		B94743B422750D9A00D0FDD1 /* IdentifierConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94743B322750D9A00D0FDD1 /* IdentifierConstants.swift */; };
+		B94743BC2275BFFA00D0FDD1 /* GameResultServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94743BB2275BFFA00D0FDD1 /* GameResultServiceSpec.swift */; };
 		B96CE13022746FDB0027DB3B /* MetricConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CE12F22746FDB0027DB3B /* MetricConstants.swift */; };
 		B99C44092270DFB500431AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44082270DFB500431AF5 /* AppDelegate.swift */; };
 		B99C440B2270DFB500431AF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C440A2270DFB500431AF5 /* ViewController.swift */; };
@@ -60,6 +61,13 @@
 			remoteGlobalIDString = B99C44042270DFB500431AF5;
 			remoteInfo = Roshambo;
 		};
+		B94743BE2275BFFA00D0FDD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B99C43FD2270DFB500431AF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B99C44042270DFB500431AF5;
+			remoteInfo = Roshambo;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +77,9 @@
 		B92F53422273A88E008F3147 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		B92F53442273AD54008F3147 /* TakeScreenshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeScreenshots.swift; sourceTree = "<group>"; };
 		B94743B322750D9A00D0FDD1 /* IdentifierConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierConstants.swift; sourceTree = "<group>"; };
+		B94743B92275BFFA00D0FDD1 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94743BB2275BFFA00D0FDD1 /* GameResultServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultServiceSpec.swift; sourceTree = "<group>"; };
+		B94743BD2275BFFA00D0FDD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96CE12F22746FDB0027DB3B /* MetricConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricConstants.swift; sourceTree = "<group>"; };
 		B99C44052270DFB500431AF5 /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99C44082270DFB500431AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +138,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B94743B62275BFFA00D0FDD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B99C44022270DFB500431AF5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +163,24 @@
 				B92F53442273AD54008F3147 /* TakeScreenshots.swift */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		B94743BA2275BFFA00D0FDD1 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B94743BB2275BFFA00D0FDD1 /* GameResultServiceSpec.swift */,
+				B94743BD2275BFFA00D0FDD1 /* Info.plist */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		B94743C42275C05F00D0FDD1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B92F53392273A86E008F3147 /* UITests */,
+				B94743BA2275BFFA00D0FDD1 /* UnitTests */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		B96CE1252273AEE70027DB3B /* Frameworks */ = {
@@ -171,7 +207,7 @@
 				B99C441F2270E1F800431AF5 /* README.md */,
 				B92F533322738032008F3147 /* fastlane */,
 				B99C44072270DFB500431AF5 /* Roshambo */,
-				B92F53392273A86E008F3147 /* UITests */,
+				B94743C42275C05F00D0FDD1 /* Tests */,
 				B99C44062270DFB500431AF5 /* Products */,
 				B96CE1252273AEE70027DB3B /* Frameworks */,
 			);
@@ -182,6 +218,7 @@
 			children = (
 				B99C44052270DFB500431AF5 /* Roshambo.app */,
 				B92F53382273A86E008F3147 /* UITests.xctest */,
+				B94743B92275BFFA00D0FDD1 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,6 +423,24 @@
 			productReference = B92F53382273A86E008F3147 /* UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B94743B82275BFFA00D0FDD1 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B94743C02275BFFA00D0FDD1 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				B94743B52275BFFA00D0FDD1 /* Sources */,
+				B94743B62275BFFA00D0FDD1 /* Frameworks */,
+				B94743B72275BFFA00D0FDD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B94743BF2275BFFA00D0FDD1 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = B94743B92275BFFA00D0FDD1 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B99C44042270DFB500431AF5 /* Roshambo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B99C44172270DFB800431AF5 /* Build configuration list for PBXNativeTarget "Roshambo" */;
@@ -417,6 +472,10 @@
 						CreatedOnToolsVersion = 10.2;
 						TestTargetID = B99C44042270DFB500431AF5;
 					};
+					B94743B82275BFFA00D0FDD1 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = B99C44042270DFB500431AF5;
+					};
 					B99C44042270DFB500431AF5 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
@@ -445,12 +504,20 @@
 			targets = (
 				B99C44042270DFB500431AF5 /* Roshambo */,
 				B92F53372273A86E008F3147 /* UITests */,
+				B94743B82275BFFA00D0FDD1 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B92F53362273A86E008F3147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94743B72275BFFA00D0FDD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,6 +542,14 @@
 			files = (
 				B92F53452273AD54008F3147 /* TakeScreenshots.swift in Sources */,
 				B92F53432273A88E008F3147 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94743B52275BFFA00D0FDD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94743BC2275BFFA00D0FDD1 /* GameResultServiceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +607,11 @@
 			target = B99C44042270DFB500431AF5 /* Roshambo */;
 			targetProxy = B92F533D2273A86E008F3147 /* PBXContainerItemProxy */;
 		};
+		B94743BF2275BFFA00D0FDD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B99C44042270DFB500431AF5 /* Roshambo */;
+			targetProxy = B94743BE2275BFFA00D0FDD1 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -551,7 +631,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 766K8ALVVD;
-				INFOPLIST_FILE = UITests/Info.plist;
+				INFOPLIST_FILE = Tests/UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -572,7 +652,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 766K8ALVVD;
-				INFOPLIST_FILE = UITests/Info.plist;
+				INFOPLIST_FILE = Tests/UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,6 +665,72 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Roshambo;
+			};
+			name = Release;
+		};
+		B94743C12275BFFA00D0FDD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 766K8ALVVD;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshambo.app/Roshambo";
+			};
+			name = Debug;
+		};
+		B94743C22275BFFA00D0FDD1 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 766K8ALVVD;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshambo.app/Roshambo";
+			};
+			name = Beta;
+		};
+		B94743C32275BFFA00D0FDD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 766K8ALVVD;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshambo.app/Roshambo";
 			};
 			name = Release;
 		};
@@ -676,7 +822,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 766K8ALVVD;
-				INFOPLIST_FILE = UITests/Info.plist;
+				INFOPLIST_FILE = Tests/UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -861,6 +1007,16 @@
 				B92F53402273A86E008F3147 /* Debug */,
 				B96CE133227471EF0027DB3B /* Beta */,
 				B92F53412273A86E008F3147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B94743C02275BFFA00D0FDD1 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94743C12275BFFA00D0FDD1 /* Debug */,
+				B94743C22275BFFA00D0FDD1 /* Beta */,
+				B94743C32275BFFA00D0FDD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

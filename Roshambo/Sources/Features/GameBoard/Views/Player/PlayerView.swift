@@ -55,7 +55,9 @@ final class PlayerView: UIView {
     private lazy var scissorsButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("✌️", for: .normal)
+        let title = "✌️"
+        button.setTitle(title, for: .normal)
+        button.accessibilityIdentifier = title
         button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
         button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
         button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
@@ -66,7 +68,9 @@ final class PlayerView: UIView {
     private lazy var rockButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("✊", for: .normal)
+        let title = "✊"
+        button.setTitle(title, for: .normal)
+        button.accessibilityIdentifier = title
         button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
         button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
         button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
@@ -77,7 +81,9 @@ final class PlayerView: UIView {
     private lazy var paperButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("🤚", for: .normal)
+        let title = "🤚"
+        button.setTitle(title, for: .normal)
+        button.accessibilityIdentifier = title
         button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
         button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
         button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
@@ -191,8 +197,11 @@ extension PlayerView {
     
     private func setupActionButtonConstraints() {
         scissorsButton.widthAnchor.constraint(equalToConstant: MetricConstants.PlayerView.ActionButton.width).isActive = true
+        scissorsButton.heightAnchor.constraint(equalToConstant: MetricConstants.PlayerView.ActionButton.height).isActive = true
         rockButton.widthAnchor.constraint(equalTo: scissorsButton.widthAnchor, multiplier: 1).isActive = true
+        rockButton.heightAnchor.constraint(equalTo: scissorsButton.heightAnchor, multiplier: 1).isActive = true
         paperButton.widthAnchor.constraint(equalTo: scissorsButton.widthAnchor, multiplier: 1).isActive = true
+        paperButton.heightAnchor.constraint(equalTo: scissorsButton.heightAnchor, multiplier: 1).isActive = true
     }
     
     private func styleActionButtons() {
