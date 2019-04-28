@@ -11,6 +11,7 @@
 		B92F53452273AD54008F3147 /* TakeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F53442273AD54008F3147 /* TakeScreenshots.swift */; };
 		B94743B422750D9A00D0FDD1 /* IdentifierConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94743B322750D9A00D0FDD1 /* IdentifierConstants.swift */; };
 		B94743BC2275BFFA00D0FDD1 /* GameResultServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94743BB2275BFFA00D0FDD1 /* GameResultServiceSpec.swift */; };
+		B94743C622762E8C00D0FDD1 /* AccessibilityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94743C522762E8C00D0FDD1 /* AccessibilityConstants.swift */; };
 		B96CE13022746FDB0027DB3B /* MetricConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CE12F22746FDB0027DB3B /* MetricConstants.swift */; };
 		B99C44092270DFB500431AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C44082270DFB500431AF5 /* AppDelegate.swift */; };
 		B99C440B2270DFB500431AF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C440A2270DFB500431AF5 /* ViewController.swift */; };
@@ -80,6 +81,7 @@
 		B94743B92275BFFA00D0FDD1 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94743BB2275BFFA00D0FDD1 /* GameResultServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultServiceSpec.swift; sourceTree = "<group>"; };
 		B94743BD2275BFFA00D0FDD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B94743C522762E8C00D0FDD1 /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
 		B96CE12F22746FDB0027DB3B /* MetricConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricConstants.swift; sourceTree = "<group>"; };
 		B99C44052270DFB500431AF5 /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99C44082270DFB500431AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		B96CE12E22746FCB0027DB3B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				B94743C522762E8C00D0FDD1 /* AccessibilityConstants.swift */,
 				B94743B322750D9A00D0FDD1 /* IdentifierConstants.swift */,
 				B96CE12F22746FDB0027DB3B /* MetricConstants.swift */,
 			);
@@ -593,6 +596,7 @@
 				B99C447322722E5D00431AF5 /* GameResult.swift in Sources */,
 				B99C44342270E48500431AF5 /* GameBoardWireframeError.swift in Sources */,
 				B99C44572271080500431AF5 /* PlayerViewViewModelCreator.swift in Sources */,
+				B94743C622762E8C00D0FDD1 /* AccessibilityConstants.swift in Sources */,
 				B99C44352270E48500431AF5 /* GameBoardPresenterDependencies.swift in Sources */,
 				B99C44092270DFB500431AF5 /* AppDelegate.swift in Sources */,
 				B99C44382270E48500431AF5 /* GameBoardView.swift in Sources */,

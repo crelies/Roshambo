@@ -35,12 +35,15 @@ final class PlayerView: UIView {
         return stackView
     }()
     
-    private lazy var informationLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = MetricConstants.PlayerView.InformationLabel.font
-        return label
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
+    
+    private var imageViewWidthConstraint: NSLayoutConstraint?
+    private var imageViewHeightConstraint: NSLayoutConstraint?
     
     private lazy var actionButtonStackView: UIStackView = {
         let stackView = UIStackView()
@@ -55,10 +58,10 @@ final class PlayerView: UIView {
     private lazy var scissorsButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        let title = "✌️"
-        button.setTitle(title, for: .normal)
-        button.accessibilityIdentifier = title
-        button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
+        button.accessibilityIdentifier = AccessibilityConstants.Identifier.GameBoard.PlayerView.ActionButton.scissors
+        let image = UIImage(named: "icon_scissors")
+        button.setImage(image, for: .normal)
+        button.imageEdgeInsets = MetricConstants.PlayerView.ActionButton.imageEdgeInsets
         button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
         button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
         button.addTarget(self, action: #selector(didPressScissorsButton(_:)), for: .touchUpInside)
@@ -68,10 +71,10 @@ final class PlayerView: UIView {
     private lazy var rockButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        let title = "✊"
-        button.setTitle(title, for: .normal)
-        button.accessibilityIdentifier = title
-        button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
+        button.accessibilityIdentifier = AccessibilityConstants.Identifier.GameBoard.PlayerView.ActionButton.rock
+        let image = UIImage(named: "icon_rock")
+        button.setImage(image, for: .normal)
+        button.imageEdgeInsets = MetricConstants.PlayerView.ActionButton.imageEdgeInsets
         button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
         button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
         button.addTarget(self, action: #selector(didPressRockButton(_:)), for: .touchUpInside)
@@ -81,10 +84,10 @@ final class PlayerView: UIView {
     private lazy var paperButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        let title = "🤚"
-        button.setTitle(title, for: .normal)
-        button.accessibilityIdentifier = title
-        button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
+        button.accessibilityIdentifier = AccessibilityConstants.Identifier.GameBoard.PlayerView.ActionButton.paper
+        let image = UIImage(named: "icon_paper")
+        button.setImage(image, for: .normal)
+        button.imageEdgeInsets = MetricConstants.PlayerView.ActionButton.imageEdgeInsets
         button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
         button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
         button.addTarget(self, action: #selector(didPressPaperButton(_:)), for: .touchUpInside)
@@ -109,10 +112,27 @@ extension PlayerView: PlayerViewProtocol {
     }
     
     func updateUI(withViewModel viewModel: PlayerViewViewModel) {
-        informationLabel.isHidden = viewModel.isInformationLabelHidden
-        informationLabel.text = viewModel.informationLabelText
-        let updatedFont = informationLabel.font.withSize(viewModel.informationLabelFontSize)
-        informationLabel.font = updatedFont
+        imageView.isHidden = viewModel.isImageViewHidden
+        imageView.image = viewModel.image
+        
+        if let imageViewSize = viewModel.imageViewSize {
+            imageViewWidthConstraint?.constant = imageViewSize.width
+            imageViewHeightConstraint?.constant = imageViewSize.height
+        }
+        
+        if !viewModel.isImageViewHidden || !viewModel.areActionButtonsHidden {
+            addSubview(verticalStackView)
+            setupVerticalStackViewConstraints()
+        } else {
+            verticalStackView.removeFromSuperview()
+        }
+        
+        if imageView.isHidden {
+            verticalStackView.removeArrangedSubview(imageView)
+            imageView.removeFromSuperview()
+        } else {
+            verticalStackView.addArrangedSubview(imageView)
+        }
         
         if viewModel.areActionButtonsHidden {
             actionButtonStackView.removeArrangedSubview(scissorsButton)
@@ -168,17 +188,12 @@ extension PlayerView {
     
     private func addInitialSubviews() {
         addSubview(playerNameLabel)
-        
-        verticalStackView.addArrangedSubview(informationLabel)
-        
-        addSubview(verticalStackView)
     }
     
     private func setupConstraints() {
         heightAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.PlayerView.minHeight).isActive = true
-        
         setupPlayerNameLabelConstraints()
-        setupVerticalStackViewConstraints()
+        setupImageViewConstraints()
     }
     
     private func setupPlayerNameLabelConstraints() {
@@ -189,10 +204,20 @@ extension PlayerView {
     private func setupVerticalStackViewConstraints() {
         verticalStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         verticalStackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.left).isActive = true
+        verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.trailingAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.left).isActive = true
         verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.right).isActive = true
         verticalStackView.topAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.bottomAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.top).isActive = true
         verticalStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.bottom).isActive = true
+    }
+    
+    private func setupImageViewConstraints() {
+        let imageViewWidthConstraint = imageView.widthAnchor.constraint(equalToConstant: 0)
+        imageViewWidthConstraint.isActive = true
+        self.imageViewWidthConstraint = imageViewWidthConstraint
+        
+        let imageViewHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: 0)
+        imageViewHeightConstraint.isActive = true
+        self.imageViewHeightConstraint = imageViewHeightConstraint
     }
     
     private func setupActionButtonConstraints() {

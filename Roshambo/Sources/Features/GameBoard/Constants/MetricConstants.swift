@@ -10,6 +10,7 @@ import UIKit
 
 struct MetricConstants {
     static let backgroundColor: UIColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
+    static let tintColor: UIColor = UIColor(red: 12/255, green: 23/255, blue: 40/255, alpha: 1)
     static let cornerRadius: CGFloat = 8
     static let defaultFontSize: CGFloat = 17
     static let winnerFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.08 : UIScreen.main.bounds.height * 0.05
@@ -52,26 +53,25 @@ extension MetricConstants {
 
 extension MetricConstants {
     struct PlayerView {
-        static let minHeight: CGFloat = PlayerView.PlayerNameLabel.insets.top + PlayerNameLabel.fontSize + VerticalStackView.insets.top + winnerFontSize + VerticalStackView.insets.bottom
-        static let emojiFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.05 : UIScreen.main.bounds.height * 0.03
+        static let minHeight: CGFloat = PlayerNameLabel.insets.top + PlayerNameLabel.fontSize + VerticalStackView.insets.top + winnerFontSize + VerticalStackView.insets.bottom
         
         struct ActionButton {
-            static let width: CGFloat = MetricConstants.winnerFontSize + 6
-            static let height: CGFloat = ActionButton.width
-            static let font: UIFont = UIFont.systemFont(ofSize: emojiFontSize)
-            static let borderColor: CGColor = UIColor(red: 12/255, green: 23/255, blue: 40/255, alpha: 1).cgColor
+            static let width: CGFloat = winnerFontSize
+            static let height: CGFloat = width
+            static let imageEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            static let borderColor: CGColor = MetricConstants.tintColor.cgColor
             static let borderWidth: CGFloat = 2
         }
         
-        struct InformationLabel {
-            static let font: UIFont = UIFont.systemFont(ofSize: defaultFontSize, weight: .regular)
-            static let resultFontSize: CGFloat = emojiFontSize
+        struct ImageView {
+            static let defaultImageSize: CGSize = CGSize(width: winnerFontSize * 0.7, height: winnerFontSize * 0.7)
+            static let winnerImageSize: CGSize = CGSize(width: winnerFontSize, height: winnerFontSize)
         }
         
         struct PlayerNameLabel {
             static let insets: UIEdgeInsets = UIEdgeInsets(top: 6, left: 8, bottom: 0, right: 0)
-            static let fontSize: CGFloat = 11
-            static let font: UIFont = UIFont.systemFont(ofSize: PlayerNameLabel.fontSize, weight: .semibold)
+            static let fontSize: CGFloat = 14
+            static let font: UIFont = UIFont.systemFont(ofSize: fontSize, weight: .semibold)
         }
         
         struct Spacing {

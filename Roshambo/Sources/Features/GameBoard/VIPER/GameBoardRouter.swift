@@ -31,6 +31,7 @@ final class GameBoardRouter {
 extension GameBoardRouter: GameBoardRouterProtocol {
     func showDeveloperWebsite() {
         let safariViewController = SFSafariViewController(url: IdentifierConstants.developerWebsiteURL)
+        safariViewController.preferredControlTintColor = MetricConstants.tintColor
         viewController?.present(safariViewController, animated: true, completion: nil)
     }
     

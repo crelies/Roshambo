@@ -30,20 +30,20 @@ extension PlayerViewViewModelCreator: PlayerViewViewModelCreatorProtocol {
     func createViewModel(forState state: PlayerViewState, isWinner: Bool) -> PlayerViewViewModel {
         switch state {
             case .initial:
-                return PlayerViewViewModel(isInformationLabelHidden: false,
-                                           informationLabelText: state.displayText,
-                                           informationLabelFontSize: MetricConstants.defaultFontSize,
+                return PlayerViewViewModel(isImageViewHidden: false,
+                                           image: state.displayImage,
+                                           imageViewSize: MetricConstants.PlayerView.ImageView.defaultImageSize,
                                            areActionButtonsHidden: true)
             case .takeAction:
-                return PlayerViewViewModel(isInformationLabelHidden: true,
-                                           informationLabelText: state.displayText,
-                                           informationLabelFontSize: MetricConstants.defaultFontSize,
+                return PlayerViewViewModel(isImageViewHidden: true,
+                                           image: state.displayImage,
+                                           imageViewSize: nil,
                                            areActionButtonsHidden: false)
             case .result:
-                let informationLabelFontSize: CGFloat = isWinner ? MetricConstants.winnerFontSize : MetricConstants.PlayerView.InformationLabel.resultFontSize
-                return PlayerViewViewModel(isInformationLabelHidden: false,
-                                           informationLabelText: state.displayText,
-                                           informationLabelFontSize: informationLabelFontSize,
+                let imageViewSize = isWinner ? MetricConstants.PlayerView.ImageView.winnerImageSize : MetricConstants.PlayerView.ImageView.defaultImageSize
+                return PlayerViewViewModel(isImageViewHidden: false,
+                                           image: state.displayImage,
+                                           imageViewSize: imageViewSize,
                                            areActionButtonsHidden: true)
         }
     }

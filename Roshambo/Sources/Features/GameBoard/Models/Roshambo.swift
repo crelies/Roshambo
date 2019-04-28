@@ -6,7 +6,7 @@
 //  Copyright © 2019 Christian Elies. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Roshambo: CaseIterable {
     case scissors
@@ -30,14 +30,14 @@ extension Roshambo: Equatable {
 }
 
 extension Roshambo {
-    var displayText: String {
+    var displayImage: UIImage {
         switch self {
             case .scissors:
-                return "✌️"
+                return UIImage(named: "icon_scissors")!
             case .rock:
-                return "✊"
+                return UIImage(named: "icon_rock")!
             case .paper:
-                return "🤚"
+                return UIImage(named: "icon_paper")!
         }
     }
 }

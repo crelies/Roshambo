@@ -9,8 +9,8 @@
 import UIKit
 
 struct PlayerViewViewModel {
-    let isInformationLabelHidden: Bool
-    let informationLabelText: String
-    let informationLabelFontSize: CGFloat
+    let isImageViewHidden: Bool
+    let image: UIImage?
+    let imageViewSize: CGSize?
     let areActionButtonsHidden: Bool
 }

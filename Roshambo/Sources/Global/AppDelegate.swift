@@ -18,6 +18,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootViewController = GameBoardWireframe.makeViewController(delegate: nil)
         let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.tintColor = MetricConstants.tintColor
         window.rootViewController = navigationController
         
         window.makeKeyAndVisible()

@@ -15,14 +15,14 @@ enum PlayerViewState {
 }
 
 extension PlayerViewState {
-    var displayText: String {
+    var displayImage: UIImage? {
         switch self {
             case .initial:
-                return "You first 😉"
-            case .takeAction:
-                return ""
+                return UIImage(named: "icon_question_mark")!
             case .result(let roshambo):
-                return roshambo.displayText
+                return roshambo.displayImage
+            default:
+                return nil
         }
     }
 }
