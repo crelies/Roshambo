@@ -53,28 +53,34 @@ final class PlayerView: UIView {
     }()
     
     private lazy var scissorsButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✌️", for: .normal)
         button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
+        button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
+        button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
         button.addTarget(self, action: #selector(didPressScissorsButton(_:)), for: .touchUpInside)
         return button
     }()
     
     private lazy var rockButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✊", for: .normal)
         button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
+        button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
+        button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
         button.addTarget(self, action: #selector(didPressRockButton(_:)), for: .touchUpInside)
         return button
     }()
     
     private lazy var paperButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("🤚", for: .normal)
         button.titleLabel?.font = MetricConstants.PlayerView.ActionButton.font
+        button.layer.borderColor = MetricConstants.PlayerView.ActionButton.borderColor
+        button.layer.borderWidth = MetricConstants.PlayerView.ActionButton.borderWidth
         button.addTarget(self, action: #selector(didPressPaperButton(_:)), for: .touchUpInside)
         return button
     }()
@@ -119,7 +125,14 @@ extension PlayerView: PlayerViewProtocol {
             actionButtonStackView.addArrangedSubview(rockButton)
             actionButtonStackView.addArrangedSubview(paperButton)
             
+            setupActionButtonConstraints()
+            
             verticalStackView.addArrangedSubview(actionButtonStackView)
+            
+            verticalStackView.setNeedsLayout()
+            verticalStackView.layoutIfNeeded()
+            
+            styleActionButtons()
         }
     }
 }
@@ -174,5 +187,18 @@ extension PlayerView {
         verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.right).isActive = true
         verticalStackView.topAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.bottomAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.top).isActive = true
         verticalStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.bottom).isActive = true
+    }
+    
+    private func setupActionButtonConstraints() {
+        scissorsButton.widthAnchor.constraint(equalToConstant: MetricConstants.PlayerView.ActionButton.width).isActive = true
+        rockButton.widthAnchor.constraint(equalTo: scissorsButton.widthAnchor, multiplier: 1).isActive = true
+        paperButton.widthAnchor.constraint(equalTo: scissorsButton.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    private func styleActionButtons() {
+        let cornerRadius: CGFloat = scissorsButton.frame.width / 2
+        scissorsButton.roundCorners(cornerMask: .AllCorners, cornerRadius: cornerRadius)
+        rockButton.roundCorners(cornerMask: .AllCorners, cornerRadius: cornerRadius)
+        paperButton.roundCorners(cornerMask: .AllCorners, cornerRadius: cornerRadius)
     }
 }

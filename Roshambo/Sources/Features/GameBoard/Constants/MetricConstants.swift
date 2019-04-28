@@ -9,6 +9,7 @@
 import UIKit
 
 struct MetricConstants {
+    static let backgroundColor: UIColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
     static let cornerRadius: CGFloat = 8
     static let defaultFontSize: CGFloat = 17
     static let winnerFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.08 : UIScreen.main.bounds.height * 0.05
@@ -55,7 +56,10 @@ extension MetricConstants {
         static let emojiFontSize: CGFloat = UIScreen.main.bounds.height < GameBoardView.maxHeight ? UIScreen.main.bounds.height * 0.05 : UIScreen.main.bounds.height * 0.03
         
         struct ActionButton {
+            static let width: CGFloat = 46
             static let font: UIFont = UIFont.systemFont(ofSize: emojiFontSize)
+            static let borderColor: CGColor = MetricConstants.backgroundColor.cgColor
+            static let borderWidth: CGFloat = 2
         }
         
         struct InformationLabel {

@@ -106,7 +106,7 @@ extension GameBoardViewController {
         
         setupConstraints()
         
-        view.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
+        view.backgroundColor = MetricConstants.backgroundColor
         gameBoardViewContainer.backgroundColor = .clear
         
         gameBoardView.roundCorners(cornerMask: .AllCorners, cornerRadius: MetricConstants.cornerRadius)
