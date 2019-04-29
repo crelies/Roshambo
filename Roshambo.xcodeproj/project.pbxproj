@@ -86,7 +86,7 @@
 		B94743BD2275BFFA00D0FDD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B94743C522762E8C00D0FDD1 /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
 		B96CE12F22746FDB0027DB3B /* MetricConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricConstants.swift; sourceTree = "<group>"; };
-		B99C44052270DFB500431AF5 /* Roshambo Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roshambo Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99C44052270DFB500431AF5 /* Roshambo α.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roshambo α.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99C44082270DFB500431AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B99C440A2270DFB500431AF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B99C440F2270DFB800431AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		B99C44062270DFB500431AF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B99C44052270DFB500431AF5 /* Roshambo Debug.app */,
+				B99C44052270DFB500431AF5 /* Roshambo α.app */,
 				B92F53382273A86E008F3147 /* UITests.xctest */,
 				B94743B92275BFFA00D0FDD1 /* UnitTests.xctest */,
 			);
@@ -476,7 +476,7 @@
 			);
 			name = Roshambo;
 			productName = Roshambo;
-			productReference = B99C44052270DFB500431AF5 /* Roshambo Debug.app */;
+			productReference = B99C44052270DFB500431AF5 /* Roshambo α.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -847,7 +847,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo.beta;
-				PRODUCT_NAME = "Roshambo Beta";
+				PRODUCT_NAME = "Roshambo β";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc de.crelies.Roshambo.beta";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1011,7 +1011,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo.debug;
-				PRODUCT_NAME = "Roshambo Debug";
+				PRODUCT_NAME = "Roshambo α";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development de.crelies.*";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
