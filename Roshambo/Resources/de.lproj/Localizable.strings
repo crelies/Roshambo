@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Roshambo
+
+  Created by Elies, Christian on 29.04.19.
+  Copyright © 2019 Christian Elies. All rights reserved.
+*/
+
+"GameBoard.PlayerName.you" = "Du";
+"GameBoard.PlayerName.computer" = "Computer";
+
+"GameResult.computerWins" = "Du hast verloren 🙈";
+"GameResult.draw" = "Unentschieden 😛";
+"GameResult.none" = "Wähle weise 😉";
+"GameResult.playerWins" = "Du hast gewonnen 🚀";
