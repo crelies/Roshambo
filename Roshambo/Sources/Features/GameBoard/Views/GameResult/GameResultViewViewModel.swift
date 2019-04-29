@@ -16,13 +16,13 @@ extension GameResultViewViewModel {
     init(gameResult: GameResult) {
         switch gameResult {
             case .computerWins:
-                result = "You lose 🙈"
+                result = StringConstants.GameResult.computerWins
             case .draw:
-                result = "Draw 😛"
+                result = StringConstants.GameResult.draw
             case .none:
-                result = "Choose wisely 😉"
+                result = StringConstants.GameResult.none
             case .playerWins:
-                result = "You win 🚀"
+                result = StringConstants.GameResult.playerWins
         }
     }
 }

@@ -1,1 +1,1 @@
-Roshambo, Rock-paper-scissors, Game
+Roshambo, Rock-paper-scissors, Rock, Paper, Scissors, Game

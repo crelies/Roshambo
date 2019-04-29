@@ -46,8 +46,8 @@ final class GameBoardPresenter {
 
 extension GameBoardPresenter: GameBoardPresenterProtocol {
     func viewDidLoad() {
-        view?.setPlayerName("You")
-        view?.setComputerPlayerName("Computer")
+        view?.setPlayerName(StringConstants.GameBoard.PlayerName.you)
+        view?.setComputerPlayerName(StringConstants.GameBoard.PlayerName.computer)
         updateUI(usingGameResult: .none)
     }
     
