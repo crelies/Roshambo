@@ -2,6 +2,7 @@
 devices([
     "iPhone Xs Max",
     "iPhone 6s Plus",
+    "iPhone 5s",
     "iPad Pro (12.9-inch) (2nd generation)",
     "iPad Pro (12.9-inch) (3rd generation)"
 ])
@@ -24,4 +25,4 @@ clear_previous_screenshots(true)
 # fastlane action snapshot
 
 # Latest version of iOS
-ios_version '11.0'
+ios_version '12.2'
