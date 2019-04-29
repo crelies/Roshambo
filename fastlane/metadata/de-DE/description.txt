@@ -1,0 +1,3 @@
+Roshambo Lite is meine Version des berühmten Schere-Stein-Papier Spiels :-) Versuche den Computer zu besiegen, wenn du kannst.
+
+Viel Spaß!

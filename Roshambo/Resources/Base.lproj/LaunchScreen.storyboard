@@ -18,17 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✌️ ✊ 🤚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF6-XO-RZZ">
-                                <rect key="frame" x="127.5" y="423" width="159" height="50.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yIo-hV-Lnb">
+                                <rect key="frame" x="116" y="418" width="182" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_scissors" translatesAutoresizingMaskIntoConstraints="NO" id="Wnt-ty-PrS">
+                                        <rect key="frame" x="0.0" y="7.5" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="494-uF-suk"/>
+                                            <constraint firstAttribute="width" constant="45" id="OEA-lB-KJu"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_rock" translatesAutoresizingMaskIntoConstraints="NO" id="l1z-xx-JH7">
+                                        <rect key="frame" x="61" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="FOz-y9-mZ6"/>
+                                            <constraint firstAttribute="width" constant="60" id="lZr-ZM-8vQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_paper" translatesAutoresizingMaskIntoConstraints="NO" id="fas-oK-WOW">
+                                        <rect key="frame" x="137" y="7.5" width="45" height="45"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fas-oK-WOW" firstAttribute="width" secondItem="Wnt-ty-PrS" secondAttribute="width" id="6cS-DJ-Fsv"/>
+                                    <constraint firstItem="fas-oK-WOW" firstAttribute="height" secondItem="Wnt-ty-PrS" secondAttribute="height" id="ZAP-Ji-evc"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oF6-XO-RZZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="01k-y5-dMV"/>
-                            <constraint firstItem="oF6-XO-RZZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4gN-DP-n1L"/>
+                            <constraint firstItem="yIo-hV-Lnb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4ik-dM-S0N"/>
+                            <constraint firstItem="yIo-hV-Lnb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9Qp-SN-FT1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +58,9 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_paper" width="100" height="100"/>
+        <image name="icon_rock" width="100" height="100"/>
+        <image name="icon_scissors" width="100" height="100"/>
+    </resources>
 </document>
