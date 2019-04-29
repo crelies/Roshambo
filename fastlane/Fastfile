@@ -23,9 +23,9 @@ sku = 'ROSHAMBO-0001'
 signingIdentity = 'iPhone Distribution: Christian Elies (766K8ALVVD)'
 
 # Beta
-betaIpaName = 'Roshambo Beta.ipa'
+betaIpaName = 'Roshambo β.ipa'
 betaIpa = "./#{betaIpaName}"
-betaScheme = 'Roshambo Beta'
+betaScheme = 'Roshambo β'
 betaConfiguration = 'Beta'
 betaBundleIdentifier = 'de.crelies.Roshambo.beta'
 adhocProvisioningProfileIdentifier = 'match AdHoc de.crelies.Roshambo.beta'
