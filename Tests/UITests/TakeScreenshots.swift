@@ -9,15 +9,33 @@
 import XCTest
 
 final class TakeScreenshots: XCTestCase {
-    func testTakeScreenshots() {
+    func testTakePortraitScreenshots() {
         let app = XCUIApplication()
         setupSnapshot(app)
+        
         app.launch()
         
-        snapshot("01Initial")
+        XCUIDevice.shared.orientation = .portrait
+        
+        snapshot("01Initial-Portrait")
         
         app.buttons["✊"].tap()
         
-        snapshot("02Result")
+        snapshot("02Result-Portrait")
+    }
+    
+    func testTakeLandscapeScreenshots() {
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        
+        app.launch()
+        
+        XCUIDevice.shared.orientation = .landscapeLeft
+        
+        snapshot("01Initial-Landscape")
+        
+        app.buttons["✊"].tap()
+        
+        snapshot("02Result-Landscape")
     }
 }
