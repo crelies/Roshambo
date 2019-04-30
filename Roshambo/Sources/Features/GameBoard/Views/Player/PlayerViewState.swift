@@ -18,7 +18,7 @@ extension PlayerViewState {
     var displayImage: UIImage? {
         switch self {
             case .initial:
-                return UIImage(named: "icon_question_mark")!
+                return UIImage(named: "icon_question_mark_filled")!
             case .result(let roshambo):
                 return roshambo.displayImage
             default:

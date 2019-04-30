@@ -15,7 +15,7 @@ protocol PlayerViewViewModelCreatorProvider {
 }
 
 protocol PlayerViewViewModelCreatorProtocol {
-    func createViewModel(forState state: PlayerViewState, isWinner: Bool) -> PlayerViewViewModel
+    func createViewModel(forState state: PlayerViewState, isWinner: Bool, isDraw: Bool) -> PlayerViewViewModel
 }
 
 final class PlayerViewViewModelCreator {
@@ -27,23 +27,26 @@ final class PlayerViewViewModelCreator {
 }
 
 extension PlayerViewViewModelCreator: PlayerViewViewModelCreatorProtocol {
-    func createViewModel(forState state: PlayerViewState, isWinner: Bool) -> PlayerViewViewModel {
+    func createViewModel(forState state: PlayerViewState, isWinner: Bool, isDraw: Bool) -> PlayerViewViewModel {
         switch state {
             case .initial:
                 return PlayerViewViewModel(isImageViewHidden: false,
                                            image: state.displayImage,
-                                           imageViewSize: MetricConstants.PlayerView.ImageView.defaultImageSize,
+                                           sizeMultiplier: 1,
                                            areActionButtonsHidden: true)
             case .takeAction:
                 return PlayerViewViewModel(isImageViewHidden: true,
                                            image: state.displayImage,
-                                           imageViewSize: nil,
+                                           sizeMultiplier: 1,
                                            areActionButtonsHidden: false)
             case .result:
-                let imageViewSize = isWinner ? MetricConstants.PlayerView.ImageView.winnerImageSize : MetricConstants.PlayerView.ImageView.defaultImageSize
+                var sizeMultiplier: Float = 1
+                if !isWinner && !isDraw {
+                    sizeMultiplier = 0.7
+                }
                 return PlayerViewViewModel(isImageViewHidden: false,
                                            image: state.displayImage,
-                                           imageViewSize: imageViewSize,
+                                           sizeMultiplier: sizeMultiplier,
                                            areActionButtonsHidden: true)
         }
     }

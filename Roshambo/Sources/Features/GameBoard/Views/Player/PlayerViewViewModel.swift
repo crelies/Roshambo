@@ -11,6 +11,6 @@ import UIKit
 struct PlayerViewViewModel {
     let isImageViewHidden: Bool
     let image: UIImage?
-    let imageViewSize: CGSize?
+    let sizeMultiplier: Float
     let areActionButtonsHidden: Bool
 }

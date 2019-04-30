@@ -68,6 +68,9 @@ final class PlayerView: UIView {
         return button
     }()
     
+    private var scissorsButtonWidthConstraint: NSLayoutConstraint?
+    private var scissorsButtonHeightConstraint: NSLayoutConstraint?
+    
     private lazy var rockButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -94,6 +97,8 @@ final class PlayerView: UIView {
         return button
     }()
     
+    private var currentSizeMultiplier: Float?
+    
     weak var delegate: PlayerViewDelegateProtocol?
     
     override init(frame: CGRect) {
@@ -104,6 +109,36 @@ final class PlayerView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("Use init(frame:) instead")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let isPortrait = UIScreen.main.isPortrait
+        let isLandscape = UIScreen.main.isLandscape
+        
+        var relativeWidth: CGFloat?
+        if isPortrait {
+            relativeWidth = MetricConstants.winnerSizePortraitMultiplier * bounds.width
+        } else if isLandscape {
+            relativeWidth = MetricConstants.winnerSizeLandscapeMultiplier * bounds.height
+        }
+        
+        if let relativeWidth = relativeWidth {
+            let remainder = relativeWidth.truncatingRemainder(dividingBy: 2)
+            let newWidth = (relativeWidth - remainder) * CGFloat(currentSizeMultiplier ?? 1)
+            
+            scissorsButtonWidthConstraint?.constant = newWidth
+            scissorsButtonHeightConstraint?.constant = newWidth
+            
+            imageViewWidthConstraint?.constant = newWidth
+            imageViewHeightConstraint?.constant = newWidth
+            
+            verticalStackView.setNeedsLayout()
+            verticalStackView.layoutIfNeeded()
+            
+            styleActionButtons()
+        }
+    }
 }
 
 extension PlayerView: PlayerViewProtocol {
@@ -112,13 +147,10 @@ extension PlayerView: PlayerViewProtocol {
     }
     
     func updateUI(withViewModel viewModel: PlayerViewViewModel) {
+        self.currentSizeMultiplier = viewModel.sizeMultiplier
+        
         imageView.isHidden = viewModel.isImageViewHidden
         imageView.image = viewModel.image
-        
-        if let imageViewSize = viewModel.imageViewSize {
-            imageViewWidthConstraint?.constant = imageViewSize.width
-            imageViewHeightConstraint?.constant = imageViewSize.height
-        }
         
         if !viewModel.isImageViewHidden || !viewModel.areActionButtonsHidden {
             addSubview(verticalStackView)
@@ -135,17 +167,7 @@ extension PlayerView: PlayerViewProtocol {
         }
         
         if viewModel.areActionButtonsHidden {
-            actionButtonStackView.removeArrangedSubview(scissorsButton)
-            scissorsButton.removeFromSuperview()
-            
-            actionButtonStackView.removeArrangedSubview(rockButton)
-            rockButton.removeFromSuperview()
-            
-            actionButtonStackView.removeArrangedSubview(paperButton)
-            paperButton.removeFromSuperview()
-            
-            verticalStackView.removeArrangedSubview(actionButtonStackView)
-            actionButtonStackView.removeFromSuperview()
+            removeActionButtons()
         } else {
             actionButtonStackView.addArrangedSubview(scissorsButton)
             actionButtonStackView.addArrangedSubview(rockButton)
@@ -191,7 +213,6 @@ extension PlayerView {
     }
     
     private func setupConstraints() {
-        heightAnchor.constraint(greaterThanOrEqualToConstant: MetricConstants.PlayerView.minHeight).isActive = true
         setupPlayerNameLabelConstraints()
         setupImageViewConstraints()
     }
@@ -220,9 +241,33 @@ extension PlayerView {
         self.imageViewHeightConstraint = imageViewHeightConstraint
     }
     
+    private func removeActionButtons() {
+        actionButtonStackView.removeArrangedSubview(scissorsButton)
+        scissorsButton.removeFromSuperview()
+        
+        actionButtonStackView.removeArrangedSubview(rockButton)
+        rockButton.removeFromSuperview()
+        
+        actionButtonStackView.removeArrangedSubview(paperButton)
+        paperButton.removeFromSuperview()
+        
+        verticalStackView.removeArrangedSubview(actionButtonStackView)
+        actionButtonStackView.removeFromSuperview()
+    }
+    
     private func setupActionButtonConstraints() {
-        scissorsButton.widthAnchor.constraint(equalToConstant: MetricConstants.PlayerView.ActionButton.width).isActive = true
-        scissorsButton.heightAnchor.constraint(equalToConstant: MetricConstants.PlayerView.ActionButton.height).isActive = true
+        if scissorsButtonWidthConstraint == nil {
+            let scissorsButtonWidthConstraint = scissorsButton.widthAnchor.constraint(equalToConstant: 0) // MetricConstants.PlayerView.ActionButton.initialPortraitWidth
+            self.scissorsButtonWidthConstraint = scissorsButtonWidthConstraint
+            scissorsButtonWidthConstraint.isActive = true
+        }
+        
+        if scissorsButtonHeightConstraint == nil {
+            let scissorsButtonHeightConstraint = scissorsButton.heightAnchor.constraint(equalToConstant: 0) // MetricConstants.PlayerView.ActionButton.initialPortraitHeight
+            self.scissorsButtonHeightConstraint = scissorsButtonHeightConstraint
+            scissorsButtonHeightConstraint.isActive = true
+        }
+        
         rockButton.widthAnchor.constraint(equalTo: scissorsButton.widthAnchor, multiplier: 1).isActive = true
         rockButton.heightAnchor.constraint(equalTo: scissorsButton.heightAnchor, multiplier: 1).isActive = true
         paperButton.widthAnchor.constraint(equalTo: scissorsButton.widthAnchor, multiplier: 1).isActive = true

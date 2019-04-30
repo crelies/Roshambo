@@ -44,6 +44,8 @@ final class GameBoardView: UIView {
         return gameResultView
     }()
     
+    private var gameResultViewHeightConstraint: NSLayoutConstraint?
+    
     private lazy var computerView: PlayerView = {
         let computerView = PlayerView()
         computerView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +65,30 @@ final class GameBoardView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Use init(frame:) instead")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let isPortrait = UIScreen.main.isPortrait
+        let isLandscape = UIScreen.main.isLandscape
+        
+        var relativeHeight: CGFloat?
+        if isPortrait {
+            relativeHeight = MetricConstants.GameResultView.portraitHeightMultiplier * bounds.width
+        } else if isLandscape {
+            relativeHeight = MetricConstants.GameResultView.landscapeHeightMultiplier * bounds.height
+        }
+        
+        if let relativeHeight = relativeHeight {
+            let remainder = relativeHeight.truncatingRemainder(dividingBy: 2)
+            let newHeight = relativeHeight - remainder
+            
+            gameResultViewHeightConstraint?.constant = newHeight
+            
+            mainStackView.setNeedsLayout()
+            mainStackView.layoutIfNeeded()
+        }
     }
 }
 
@@ -101,7 +127,10 @@ extension GameBoardView {
         setupMainStackViewConstraints()
         
         playerView.heightAnchor.constraint(equalTo: computerView.heightAnchor, multiplier: 1).isActive = true
-        gameResultView.heightAnchor.constraint(equalToConstant: MetricConstants.GameResultView.height).isActive = true
+        
+        let gameResultViewHeightConstraint = gameResultView.heightAnchor.constraint(equalToConstant: 0) // MetricConstants.GameResultView.initialPortraitHeight
+        self.gameResultViewHeightConstraint = gameResultViewHeightConstraint
+        gameResultViewHeightConstraint.isActive = true
     }
     
     private func setupMainStackViewConstraints() {

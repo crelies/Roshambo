@@ -55,6 +55,7 @@
 		CE1177D82276D0A000D5ACB4 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1177D72276D0A000D5ACB4 /* StringConstants.swift */; };
 		CE1177DB2276D16300D5ACB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE1177DD2276D16300D5ACB4 /* Localizable.strings */; };
 		CE1177E02276D26600D5ACB4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1177DF2276D26600D5ACB4 /* String+localized.swift */; };
+		CE1178032278C0BD00D5ACB4 /* UIScreen+DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1178022278C0BD00D5ACB4 /* UIScreen+DisplayMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		CE1177DC2276D16300D5ACB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE1177DE2276D17300D5ACB4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE1177DF2276D26600D5ACB4 /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
+		CE1178022278C0BD00D5ACB4 /* UIScreen+DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+DisplayMode.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +412,7 @@
 			children = (
 				B99C44772272329F00431AF5 /* CACornerMask+Corners.swift */,
 				CE1177DF2276D26600D5ACB4 /* String+localized.swift */,
+				CE1178022278C0BD00D5ACB4 /* UIScreen+DisplayMode.swift */,
 				B99C4475227230E900431AF5 /* UIView+RoundCorners.swift */,
 			);
 			path = Extensions;
@@ -622,6 +625,7 @@
 				B99C44352270E48500431AF5 /* GameBoardPresenterDependencies.swift in Sources */,
 				B99C44092270DFB500431AF5 /* AppDelegate.swift in Sources */,
 				B99C44382270E48500431AF5 /* GameBoardView.swift in Sources */,
+				CE1178032278C0BD00D5ACB4 /* UIScreen+DisplayMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
