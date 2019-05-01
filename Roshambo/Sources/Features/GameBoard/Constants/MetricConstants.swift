@@ -18,7 +18,7 @@ struct MetricConstants {
     static let cornerRadius: CGFloat = 8
     static let defaultFontSize: CGFloat = 17
     static let winnerSizePortraitMultiplier: CGFloat = (56 / (minimumScreenWidth - GameBoardViewContainer.insets.left - GameBoardViewContainer.insets.right))
-    static let winnerSizeLandscapeMultiplier: CGFloat = (36 / PlayerView.minimumLandscapeHeight)
+    static let winnerSizeLandscapeMultiplier: CGFloat = (44 / PlayerView.minimumLandscapeHeight)
     static let initialWinnerPortraitWidth: CGFloat = winnerSizePortraitMultiplier * GameBoardViewContainer.minimumPortraitWidth
 }
 
