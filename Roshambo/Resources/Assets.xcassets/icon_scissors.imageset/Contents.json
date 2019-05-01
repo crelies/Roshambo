@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-hand_peace.png",
+      "filename" : "icons8-hand-peace-50.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icons8-hand_peace.png",
       "scale" : "2x"
     },
     {

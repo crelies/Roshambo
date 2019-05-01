@@ -1,3 +1,9 @@
 Roshambo Lite is my simple version of the famous rock-paper-scissors game :-) Try to beat the computer if you can.
 
 Enjoy!
+
+
+Credits:
+
+- The Icons in the App are from icons8 (https://icons8.com/icons)
+- FontAwesome is used for the AppIcon (https://fontawesome.com/)
