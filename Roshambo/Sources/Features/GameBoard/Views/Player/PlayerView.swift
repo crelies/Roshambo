@@ -225,7 +225,7 @@ extension PlayerView {
     private func setupVerticalStackViewConstraints() {
         verticalStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         verticalStackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.trailingAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.left).isActive = true
+        verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.left).isActive = true
         verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.right).isActive = true
         verticalStackView.topAnchor.constraint(greaterThanOrEqualTo: playerNameLabel.bottomAnchor, constant: MetricConstants.PlayerView.VerticalStackView.insets.top).isActive = true
         verticalStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -MetricConstants.PlayerView.VerticalStackView.insets.bottom).isActive = true

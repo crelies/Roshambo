@@ -19,7 +19,6 @@ struct MetricConstants {
     static let defaultFontSize: CGFloat = 17
     static let winnerSizePortraitMultiplier: CGFloat = (56 / (minimumScreenWidth - GameBoardViewContainer.insets.left - GameBoardViewContainer.insets.right))
     static let winnerSizeLandscapeMultiplier: CGFloat = (44 / PlayerView.minimumLandscapeHeight)
-    static let initialWinnerPortraitWidth: CGFloat = winnerSizePortraitMultiplier * GameBoardViewContainer.minimumPortraitWidth
 }
 
 extension MetricConstants {
@@ -66,7 +65,7 @@ extension MetricConstants {
         struct ActionButton {
             static let imageEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             static let borderColor: CGColor = MetricConstants.tintColor.cgColor
-            static let borderWidth: CGFloat = 2
+            static let borderWidth: CGFloat = 1
         }
         
         struct PlayerNameLabel {

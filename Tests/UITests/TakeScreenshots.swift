@@ -13,9 +13,9 @@ final class TakeScreenshots: XCTestCase {
         let app = XCUIApplication()
         setupSnapshot(app)
         
-        app.launch()
-        
         XCUIDevice.shared.orientation = .portrait
+        
+        app.launch()
         
         snapshot("01Initial-Portrait")
         
@@ -28,9 +28,9 @@ final class TakeScreenshots: XCTestCase {
         let app = XCUIApplication()
         setupSnapshot(app)
         
-        app.launch()
-        
         XCUIDevice.shared.orientation = .landscapeLeft
+        
+        app.launch()
         
         snapshot("01Initial-Landscape")
         

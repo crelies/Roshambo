@@ -54,6 +54,12 @@ final class GameBoardViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        gameBoardView.setNeedsLayout()
+        gameBoardView.layoutIfNeeded()
+    }
+    
     @objc private func didPressInfoBarButtonItem(_ sender: UIBarButtonItem) {
         presenter?.didPressInfoBarButtonItem()
     }
