@@ -205,7 +205,12 @@ platform :ios do
                   output_name: releaseIpaName,
                   configuration: releaseConfiguration,
                   codesigning_identity: signingIdentity,
-                  exportMethod: appstoreExportMethod
+                  export_options: {
+                    method: appstoreExportMethod,
+                    provisioningProfiles: {
+                        'de.crelies.Roshambo': appstoreProvisioningProfileIdentifier
+                    }
+                  }
         )
     end
 ######################## RELEASE ##############################
@@ -233,13 +238,18 @@ platform :ios do
 
 
     desc "Creates provisioning profiles, takes screenshots, builds and uploads to App Store"
-    lane :gogogo do
-        provision
-        screenshot
-        framethem
-        create_release
-        testflight
-        upload
+    lane :gogogo do |options|
+        if options[:bump_type] != nil
+            provision
+            screenshot
+            framethem
+            setup_release(
+                          bump_type: options[:bump_type]
+            )
+            create_release
+            upload_to_testflight
+            upload
+        end
     end
 
     error do |lane, exception|
