@@ -851,6 +851,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo.beta;
+				PRODUCT_MODULE_NAME = Roshambo;
 				PRODUCT_NAME = "Roshambo β";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc de.crelies.Roshambo.beta";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1015,6 +1016,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo.debug;
+				PRODUCT_MODULE_NAME = Roshambo;
 				PRODUCT_NAME = "Roshambo α";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development de.crelies.*";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1034,6 +1036,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.Roshambo;
+				PRODUCT_MODULE_NAME = Roshambo;
 				PRODUCT_NAME = Roshambo;
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore de.crelies.Roshambo";
 				TARGETED_DEVICE_FAMILY = "1,2";
