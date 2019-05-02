@@ -201,7 +201,7 @@ platform :ios do
         push_to_git_remote(remote_branch: BRANCH_NAME, force: false, tags: false)
 
         build_app(
-                  scheme: appStoreScheme,
+                  scheme: releaseScheme,
                   output_name: releaseIpaName,
                   configuration: releaseConfiguration,
                   codesigning_identity: signingIdentity,
