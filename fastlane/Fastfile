@@ -21,7 +21,7 @@ sku = 'ROSHAMBO-0001'
 
 # General
 rootDirectory = 'Roshambo'
-xcodeProject = 'Roshambo'
+xcodeProject = 'Roshambo.xcodeproj'
 incrementedBuildNumberCommitMessage = 'Incremented build number'
 signingIdentity = 'iPhone Distribution: Christian Elies (766K8ALVVD)'
 developBranchName = 'develop'
@@ -117,7 +117,7 @@ platform :ios do
     desc "Creates ipa"
     lane :build do
         increment_build_number
-        git_commit(path: ["./#{xcodeProject}/project.pbxproj", "./#{rootDirectory}}/Resources/Info.plist"], message: incrementedBuildNumberCommitMessage)
+        git_commit(path: ["./#{xcodeProject}/project.pbxproj", "./#{rootDirectory}}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: incrementedBuildNumberCommitMessage)
         push_to_git_remote(remote_branch: developBranchName, force: false, tags: false)
 
         build_app(
