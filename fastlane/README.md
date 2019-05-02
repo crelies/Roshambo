@@ -36,16 +36,21 @@ Takes screenshots
 fastlane ios framethem
 ```
 Frames screenshots
+### ios unit_tests
+```
+fastlane ios unit_tests
+```
+Runs unit tests
 ### ios setup_release
 ```
 fastlane ios setup_release
 ```
 Sets up release
-### ios build
+### ios create_release
 ```
-fastlane ios build
+fastlane ios create_release
 ```
-Creates ipa
+Creates release
 ### ios upload_testflight
 ```
 fastlane ios upload_testflight
