@@ -1,6 +1,7 @@
 {
-    "device_frame_version": "1547918626",
+    "device_frame_version": "latest",
     "default": {
+        "padding": 50,
         "title": {
             "color": "#0c1728"
         },
@@ -13,13 +14,13 @@
         {
             "filter": "Initial",
             "keyword": {
-                "color": "#2A3132"
+                "color": "#FB6542"
             }
         },
         {
             "filter": "Result",
             "keyword": {
-                "color": "#336B87"
+                "color": "#4CB5F5"
             }
         }
     ]
