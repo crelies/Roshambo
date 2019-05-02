@@ -28,6 +28,10 @@ signingIdentity = 'iPhone Distribution: Christian Elies (766K8ALVVD)'
 developBranchName = 'develop'
 screenshotsPath = './fastlane/screenshots'
 
+# Testing
+unitTestScheme = 'UnitTests'
+simulator = 'iPhone 5s'
+
 # Beta
 betaIpaName = 'Roshambo β.ipa'
 betaIpa = "./#{betaIpaName}"
@@ -56,6 +60,9 @@ fastlane_version "2.121.1"
 default_platform(:ios)
 
 platform :ios do
+    
+    
+######################## BETA ##############################
     desc "Creates a beta build and uploads it to the MS AppCenter"
     lane :beta do |options|
         apiToken = options[:apiToken]
@@ -75,8 +82,10 @@ platform :ios do
                          ipa: betaIpa
         )
     end
-    
-    
+######################## BETA ##############################
+
+
+######################## PREPARATION & PROVISIONING ##############################
     desc "Creates the provisioning profiles"
     lane :provision do
         # Create App in Dev Center and App Store Connect
@@ -102,7 +111,10 @@ platform :ios do
              provisioning_name: appstoreProvisioningProfileIdentifier
         )
     end
+######################## PREPARATION & PROVISIONING ##############################
 
+
+######################## SCREENSHOTS ##############################
     desc "Takes screenshots"
     lane :screenshot do
         snapshot
@@ -114,7 +126,25 @@ platform :ios do
                           path: screenshotsPath
         )
     end
+######################## SCREENSHOTS ##############################
+
+
+######################## TESTING ##############################
+    desc "Runs unit tests"
+    lane :unit_tests do
+        scan(
+             output_directory: './fastlane/test_output',
+             output_types: 'html,junit',
+             code_coverage: true,
+             open_report: false,
+             scheme: unitTestScheme,
+             device: simulator
+             )
+    end
+######################## TESTING ##############################
+
     
+######################## RELEASE ##############################
     desc "Sets up release"
     lane :setup_release do |options|
         if options[:bump_type] != nil
@@ -141,16 +171,31 @@ platform :ios do
         
         if tag != nil
             if tag == version_number
-                puts "The version number of the project and the tag are equal, that's why we need to increase the version number."
+                puts 'The version number of the project and the tag are equal, that's why we need to increase the version number.'
                 increment_version_number(bump_type: bump_type)
             elsif
-                puts "The version number of the project and the tag are not equal, that's why we don't need to increment the version number."
+                puts 'The version number of the project and the tag are not equal, that's why we don't need to increment the version number.'
             end
         end
     end
 
-    desc "Creates ipa"
-    lane :build do
+    desc "Creates release"
+    lane :create_release do
+        unit_tests
+        
+        version_number = get_version_number(xcodeproj: xcodeProject)
+        BRANCH_NAME = "release/#{version_number}"
+        
+        ensure_git_branch(
+                          branch: BRANCH_NAME
+        )
+                          
+        xcclean(
+                scheme: releaseScheme
+        )
+        
+        clear_derived_data
+        
         increment_build_number
         git_commit(path: ["./#{xcodeProject}/project.pbxproj", "./#{rootDirectory}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: incrementedBuildNumberCommitMessage)
         push_to_git_remote(remote_branch: developBranchName, force: false, tags: false)
@@ -163,12 +208,16 @@ platform :ios do
                   exportMethod: appstoreExportMethod
         )
     end
-    
+######################## RELEASE ##############################
+
+
+######################## UPLOADING ##############################
     desc "Uploads to TestFlight"
     lane :upload_testflight do
         upload_to_testflight(
                              app_identifier: releaseBundleIdentifier,
-                             ipa: releaseIpa
+                             ipa: releaseIpa,
+                             skip_submission: true
         )
     end
 
@@ -180,13 +229,15 @@ platform :ios do
                             submit_for_review: false
         )
     end
+######################## UPLOADING ##############################
+
 
     desc "Creates provisioning profiles, takes screenshots, builds and uploads to App Store"
     lane :gogogo do
         provision
         screenshot
         framethem
-        build
+        create_release
         testflight
         upload
     end

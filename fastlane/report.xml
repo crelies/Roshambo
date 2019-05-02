@@ -5,44 +5,44 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.004311">
+      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.001514">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.004818">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.001081">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to ios bump_version_number lane" time="0.028959">
+      <testcase classname="fastlane.lanes" name="2: Switch to ios bump_version_number lane" time="0.001473">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: last_git_tag" time="0.043928">
+      <testcase classname="fastlane.lanes" name="3: last_git_tag" time="0.04357">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: get_version_number" time="0.188806">
+      <testcase classname="fastlane.lanes" name="4: get_version_number" time="0.080349">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: get_version_number" time="0.032056">
+      <testcase classname="fastlane.lanes" name="5: get_version_number" time="0.036132">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: git checkout -b release/1.0" time="0.024418">
+      <testcase classname="fastlane.lanes" name="6: git checkout -b release/1.0" time="0.016961">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: git_commit" time="0.023787">
+      <testcase classname="fastlane.lanes" name="7: git_commit" time="0.028578">
         
-          <failure message="/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:235:in `block in execute_action'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:227:in `chdir'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:227:in `execute_action'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/fast_file.rb:154:in `method_missing'&#10;Fastfile:132:in `block (2 levels) in parsing_binding'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/lane_manager.rb:56:in `cruise_lane'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/commands_generator.rb:108:in `block (2 levels) in run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:76:in `run!'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/commands_generator.rb:333:in `run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/cli_tools_distributor.rb:119:in `take_off'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/fastlane:23:in `load'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;Exit status of command 'git commit -m Bumped\ version\ number\ 1.0 ./Roshambo\}/Resources/Info.plist ./Tests/UITests/Info.plist ./Tests/UnitTests/Info.plist' was 1 instead of 0.&#10;error: pathspec './Roshambo}/Resources/Info.plist' did not match any file(s) known to git&#10;" />
+          <failure message="/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:235:in `block in execute_action'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:227:in `chdir'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:227:in `execute_action'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/fast_file.rb:154:in `method_missing'&#10;Fastfile:132:in `block (2 levels) in parsing_binding'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/lane_manager.rb:56:in `cruise_lane'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/commands_generator.rb:108:in `block (2 levels) in run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:76:in `run!'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/commands_generator.rb:333:in `run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/fastlane/lib/fastlane/cli_tools_distributor.rb:119:in `take_off'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/gems/fastlane-2.121.1/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/fastlane:23:in `load'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/cli/exec.rb:74:in `load'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/cli/exec.rb:74:in `kernel_load'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/cli/exec.rb:27:in `run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/cli.rb:360:in `exec'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/vendor/thor/lib/thor.rb:369:in `dispatch'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/cli.rb:20:in `dispatch'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/vendor/thor/lib/thor/base.rb:444:in `start'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/cli.rb:10:in `start'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/exe/bundle:35:in `block in &lt;top (required)&gt;'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3@global/gems/bundler-1.15.0/exe/bundle:27:in `&lt;top (required)&gt;'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/bundle:23:in `load'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/bundle:23:in `&lt;main&gt;'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/ruby_executable_hooks:15:in `eval'&#10;/Users/crelies/.rvm/gems/ruby-2.2.3/bin/ruby_executable_hooks:15:in `&lt;main&gt;'&#10;&#10;Exit status of command 'git commit -m Bumped\ version\ number\ 1.0 ./Roshambo/Resources/Info.plist ./Tests/UITests/Info.plist ./Tests/UnitTests/Info.plist' was 1 instead of 0.&#10;On branch release/1.0&#10;Untracked files:&#10;	AdHoc_de.crelies.Roshambo.beta.mobileprovision&#10;	AppStore_de.crelies.Roshambo.mobileprovision&#10;&#10;nothing added to commit but untracked files present&#10;" />
         
       </testcase>
     
