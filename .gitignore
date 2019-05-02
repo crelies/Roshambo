@@ -37,4 +37,5 @@ Carthage/Build
 # Pods/
 
 # Fastlane
-fastlane/screenshots
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html

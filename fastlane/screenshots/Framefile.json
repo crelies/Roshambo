@@ -1,0 +1,26 @@
+{
+    "device_frame_version": "1547918626",
+    "default": {
+        "title": {
+            "color": "#0c1728"
+        },
+        "background": "./background.jpg",
+        "show_complete_frame": true,
+        "title_below_image": true,
+        "frame": "WHITE"
+    },
+    "data": [
+        {
+            "filter": "Initial",
+            "keyword": {
+                "color": "#2A3132"
+            }
+        },
+        {
+            "filter": "Result",
+            "keyword": {
+                "color": "#336B87"
+            }
+        }
+    ]
+}

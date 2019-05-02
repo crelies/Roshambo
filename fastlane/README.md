@@ -31,6 +31,11 @@ Creates the provisioning profiles
 fastlane ios screenshot
 ```
 Takes screenshots
+### ios framethem
+```
+fastlane ios framethem
+```
+Frames screenshots
 ### ios build
 ```
 fastlane ios build

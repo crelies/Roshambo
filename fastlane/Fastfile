@@ -25,6 +25,7 @@ xcodeProject = 'Roshambo'
 incrementedBuildNumberCommitMessage = 'Incremented build number'
 signingIdentity = 'iPhone Distribution: Christian Elies (766K8ALVVD)'
 developBranchName = 'develop'
+screenshotsPath = './fastlane/screenshots'
 
 # Beta
 betaIpaName = 'Roshambo β.ipa'
@@ -105,6 +106,13 @@ platform :ios do
     lane :screenshot do
         snapshot
     end
+    
+    desc "Frames screenshots"
+    lane :framethem do
+        frame_screenshots(
+                          path: screenshotsPath
+        )
+    end
 
     desc "Creates ipa"
     lane :build do
@@ -142,6 +150,7 @@ platform :ios do
     lane :gogogo do
         provision
         screenshot
+        framethem
         build
         testflight
         upload
