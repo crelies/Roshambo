@@ -171,10 +171,10 @@ platform :ios do
         
         if tag != nil
             if tag == version_number
-                puts 'The version number of the project and the tag are equal, that's why we need to increase the version number.'
+                puts "The version number of the project and the tag are equal, that's why we need to increase the version number."
                 increment_version_number(bump_type: bump_type)
             elsif
-                puts 'The version number of the project and the tag are not equal, that's why we don't need to increment the version number.'
+                puts "The version number of the project and the tag are not equal, that's why we don't need to increment the version number."
             end
         end
     end
