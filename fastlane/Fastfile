@@ -139,7 +139,7 @@ platform :ios do
              open_report: false,
              scheme: unitTestScheme,
              device: simulator
-             )
+        )
     end
 ######################## TESTING ##############################
 
@@ -198,7 +198,7 @@ platform :ios do
         
         increment_build_number
         git_commit(path: ["./#{xcodeProject}/project.pbxproj", "./#{rootDirectory}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: incrementedBuildNumberCommitMessage)
-        push_to_git_remote(remote_branch: developBranchName, force: false, tags: false)
+        push_to_git_remote(remote_branch: BRANCH_NAME, force: false, tags: false)
 
         build_app(
                   scheme: appStoreScheme,
