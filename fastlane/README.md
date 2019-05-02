@@ -36,6 +36,11 @@ Takes screenshots
 fastlane ios framethem
 ```
 Frames screenshots
+### ios setup_release
+```
+fastlane ios setup_release
+```
+Sets up release
 ### ios build
 ```
 fastlane ios build

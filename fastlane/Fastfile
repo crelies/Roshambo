@@ -129,7 +129,7 @@ platform :ios do
             
             sh("git checkout -b #{BRANCH_NAME}") # This command will fail if branch already exists
             
-            git_commit(path: ["./#{rootDirectory}}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: "#{versionBumpCommitMessage} #{version_number}")
+            git_commit(path: ["./#{rootDirectory}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: "#{versionBumpCommitMessage} #{version_number}")
             push_to_git_remote(remote_branch: BRANCH_NAME, force: false, tags: false)
         end
     end
@@ -152,7 +152,7 @@ platform :ios do
     desc "Creates ipa"
     lane :build do
         increment_build_number
-        git_commit(path: ["./#{xcodeProject}/project.pbxproj", "./#{rootDirectory}}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: incrementedBuildNumberCommitMessage)
+        git_commit(path: ["./#{xcodeProject}/project.pbxproj", "./#{rootDirectory}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: incrementedBuildNumberCommitMessage)
         push_to_git_remote(remote_branch: developBranchName, force: false, tags: false)
 
         build_app(
