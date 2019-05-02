@@ -22,6 +22,7 @@ sku = 'ROSHAMBO-0001'
 # General
 rootDirectory = 'Roshambo'
 xcodeProject = 'Roshambo.xcodeproj'
+versionBumpCommitMessage = 'Bumped version number'
 incrementedBuildNumberCommitMessage = 'Incremented build number'
 signingIdentity = 'iPhone Distribution: Christian Elies (766K8ALVVD)'
 developBranchName = 'develop'
@@ -113,6 +114,40 @@ platform :ios do
                           path: screenshotsPath
         )
     end
+    
+    desc "Sets up release"
+    lane :setup_release do |options|
+        if options[:bump_type] != nil
+            bump_type = options[:bump_type]
+            
+            bump_version_number(
+                                bump_type: bump_type
+            )
+            
+            version_number = get_version_number(xcodeproj: xcodeProject)
+            BRANCH_NAME = "release/#{version_number}"
+            
+            sh("git checkout -b #{BRANCH_NAME}") # This command will fail if branch already exists
+            
+            git_commit(path: ["./#{rootDirectory}}/Resources/Info.plist", "./Tests/UITests/Info.plist", "./Tests/UnitTests/Info.plist"], message: "#{versionBumpCommitMessage} #{version_number}")
+            push_to_git_remote(remote_branch: BRANCH_NAME, force: false, tags: false)
+        end
+    end
+    
+    private_lane :bump_version_number do |options|
+        tag = last_git_tag
+        version_number = get_version_number(xcodeproj: xcodeProject)
+        bump_type = options[:bump_type]
+        
+        if tag != nil
+            if tag == version_number
+                puts "The version number of the project and the tag are equal, that's why we need to increase the version number."
+                increment_version_number(bump_type: bump_type)
+            elsif
+                puts "The version number of the project and the tag are not equal, that's why we don't need to increment the version number."
+            end
+        end
+    end
 
     desc "Creates ipa"
     lane :build do
@@ -142,7 +177,7 @@ platform :ios do
         upload_to_app_store(
                             app_identifier: releaseBundleIdentifier,
                             ipa: releaseIpa,
-                            submit_for_review: true
+                            submit_for_review: false
         )
     end
 
