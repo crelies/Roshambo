@@ -51,11 +51,6 @@ Sets up release
 fastlane ios create_release
 ```
 Creates release
-### ios build
-```
-fastlane ios build
-```
-
 ### ios upload_testflight
 ```
 fastlane ios upload_testflight

@@ -230,7 +230,7 @@ platform :ios do
     lane :upload do
         upload_to_app_store(
                             app_identifier: releaseBundleIdentifier,
-                            ipa: releaseIpa,
+                            skip_binary_upload: true,
                             submit_for_review: false
         )
     end

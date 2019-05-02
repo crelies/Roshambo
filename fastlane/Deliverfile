@@ -4,16 +4,6 @@
 
 price_tier 0
 
-app_review_information(
-                       first_name: "Christian",
-                       last_name: "Elies",
-                       phone_number: "N/A",
-                       email_address: "chris.elies13@gmail.com",
-                       demo_user: "N/A",
-                       demo_password: "N/A",
-                       notes: "No demo account needed"
-)
-
 submission_information({
                         export_compliance_encryption_updated: false,
                         export_compliance_uses_encryption: false,
