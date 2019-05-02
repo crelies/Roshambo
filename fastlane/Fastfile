@@ -44,7 +44,7 @@ adhocExportMethod = 'ad-hoc'
 # Release
 releaseIpaName = 'Roshambo.ipa'
 releaseIpa = "./#{releaseIpaName}"
-releaseScheme = 'Roshambo'
+releaseScheme = 'Roshambo Release'
 releaseConfiguration = 'Release'
 releaseBundleIdentifier = 'de.crelies.Roshambo'
 appstoreProvisioningProfileIdentifier = 'match AppStore de.crelies.Roshambo'
