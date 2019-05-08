@@ -6,6 +6,7 @@ A simple rock-paper-scissors iOS app
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg?longCache=true&style=flat-square)](https://www.apple.com/de/ios)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
+![App icon](https://github.com/crelies/Roshambo/blob/develop/AppIcon.png)
 
 ## Author
 
